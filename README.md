@@ -1,108 +1,239 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome USER_NAME,
+# Yakker - Back-End
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## User Experience (UX)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+### User Stories
 
-## Gitpod Reminders
+- Users: 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+    - Authentication
 
-`python3 -m http.server`
+    1. As a **user** I **cannot edit/delete posts/comments that are not mine** so that **I can be assured that my posts are protected and can only be edited by me.**
 
-A blue button should appear to click: _Make Public_,
+    2. As a **user** I can **maintain my logged-in status** so that **I will not need to constantly log in when not on the website for a few hours, and can log out manually whenever I want to log out.**
 
-Another blue button should appear to click: _Open Browser_.
+    3. As a **user** I can **sign up easily with just a username and password** so that **I have the ability to create posts or comments without having to share my email address.**
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+    4. As a **user** I can **easily log out** so that **I can have more security on my account.**
 
-A blue button should appear to click: _Make Public_,
+    5. As a **user** I can **see whether I am logged in or not** so that **I will know if I will need to log in if I am not.**
 
-Another blue button should appear to click: _Open Browser_.
+    6. As a **user** I can **easily log in** so that **I can quickly post, add more comments, or delete content if I wish.**
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+    - Posts
 
-To log into the Heroku toolbelt CLI:
+    1. As a **user** I can **create new posts** so that **I can share images, my thoughts, or what I'm doing.**
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+    2. As a **user** I can **edit posts** so that **I can change my posts, images, etc whenever I change my mind about what I posted or wish to remove/add details.**
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+    3. As a **user** I can **delete my posts** so that **I can get rid of my posts that I no longer want to be shared.**
 
-------
+    4. As a **user** I can **view the details of a post** so that **I can read more information about the post such as when it was created, who created it, if it was edited, read the comments, etc.**
 
-## Release History
+    5. As a **user** I can **like posts** so that **I can share my appreciation for the post and show the world and the author that their post is great.**
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+    6. As a **user** I can **remove likes on a post** so that **I can change my mind about whether I like the post or not.**
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+    - Comments
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+    1. As a **user** I can **post a comment on a post** so that **I can contribute discussion to a post or share my thoughts about a post.**
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+    2. As a **user** I can **delete my comments on a post** so that **I can remove comments if I no longer want my comments to be public.**
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+    3. As a **user** I can **read comments on a post** so that **I can read what others think about the post and read the discussion happening.**
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+    4. As a **user** I can **edit my comments** so that **have the possibility to remove or add more details to my existing comments.**
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+    - Navigation
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+    1. As a **user** I can **go back or forward to the next page** so that **I can see the footer of the website and choose to move onto the next on the next page or go back a page to see more posts.**
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+    2. As a **user** I can **see the navigation bar at the top of every page** so that **I can easily navigate between pages.**
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+    3. As a **user** I can **navigate through pages quickly** so that **I can view content smoothly without the pages being refreshed**
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+    4. As a **user** I can **a nice 404 page consistent with the site layout** so that **I can be communicated with if I have reached an invalid web page.**
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+    5. As a **user** I can **have the navigation bar customed to my logged-in or out status** so that **I can have the options to log in or sign up when logged out, or have the options to create a post, view my profile, sign out, etc when logged in.**
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+    - Profile
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+    1. As a **user** I can **view user avatars** so that **easily identify users of the website.**
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+    2. As a **user** I can **view a detailed page of users** so that **I can see their posts and learn more about the user. I can also see their following count, followers count, etc.**
 
-------
+    3. As a **user** I can **follow or unfollow other users** so that **I can see or choose to remove posts by specific users in my posts feed.**
 
-## FAQ about the uptime script
+    - General
 
-**Why have you added this script?**
+    1. As a **user** I can **search for posts or users in a search box** so that **I can quickly find specific posts or users that I am wanting to look for.**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+    2. As a **user** I can **always be notified when my interactions on the website are successful (creating posts/comments, liking/unliking posts, unfollowing/following users, logging in/out, etc** so that **I will always be informed of my actions and whether they are successful or not.**
 
-**How will this affect me?**
+### Database Model
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- Database model has been created using the program Whimsical
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+### Kanban Board
 
-**So….?**
+## Features
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+### Existing Features
 
-**Can I opt out?**
+### Future Features
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## Technologies Used
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+### Languages and Packages/Libraries Used
 
-**Anything more?**
+1. [Django](https://www.djangoproject.com/)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+2. [Python](https://www.python.org/)
 
----
+3. [HTML5](https://en.wikipedia.org/wiki/HTML5)
 
-Happy coding!
+4. [CSS3](https://en.wikipedia.org/wiki/CSS)
+
+5. [JavaScript](https://www.javascript.com/)
+
+6. [psycopg2](https://pypi.org/project/psycopg2/)
+
+7. [Django allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)
+
+8. [Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+
+9. [gunicorn](https://gunicorn.org/)
+
+10. [PostgreSQL](https://www.postgresql.org/)
+
+### Programs Used
+
+1. [Git](https://git-scm.com/)
+    - Git was used by utilizing the Gitpod terminal to commit to Git and Push to GitHub. Version control. 
+
+2. [GitHub](https://github.com/)
+    - GitHub was used to store the project code after being pushed in by Git. Project repository linked with Heroku for deployment process. GitHub was also used to create the kanban board. 
+
+3. [Heroku](https://dashboard.heroku.com/login)
+    - Heroku was used to deploy this project. Heroku's Postgres was used as the database.  
+
+4. [Whimsical](https://whimsical.com)
+    - Whimsical was used to create the data model and the wireframes for the project. 
+
+5. [PEP8 Online Check](http://pep8online.com/)
+    - PEP8 Online Check was used to validate the Python code used and check for warnings/errors. 
+
+6. [Ecotrust-Canada Markdown-toc](https://ecotrust-canada.github.io/markdown-toc/)
+    - Ecotrust-Canada Markdown was used to create the table of contents for this README. 
+
+7. [W3C Validator](https://validator.w3.org/)
+    - W3C validator used to check the HTML5 code.
+
+8. [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+    - W3C CSS validator used to check the CSS3 code.
+
+9. [JSHint](https://jshint.com/)
+    - JSHint used to check the JavaScript code. 
+
+10. [Cloudinary](https://cloudinary.com/)
+    - Cloudinary used to host the uploaded images.
+
+11. [Font Awesome](https://fontawesome.com/)
+    - Font Awesome was used for icons.
+
+12. [Google Fonts](https://fonts.google.com/)
+    - Google Fonts was used for the Permanent Marker and Oswald fonts. 
+
+13. [Favicon.io](https://favicon.io/)
+    - Favicon.io was used for the favicon.
+
+14. [Autopep8](https://pypi.org/project/autopep8/)
+    - Autopep8 was used to help organize Python code to match PEP8 standards.
+
+15. Beautify
+    - Beautify Command Palette on Git was used to organize the code in all files.
+
+16. [Coolors](https://coolors.co/)
+    - Coolors was used to get the specific red (#5F021F) colour used in the project. 
+
+## Testing
+
+### Validation Testing & Lighthouse
+
+### Manual Testing
+
+### Bugs 
+
+## Deployment
+
+- The following steps were taken for the deployment process (taken from the I Think Therefore I Blog project):
+
+    **Project creation and initial deployment**
+    1. Ensure that the template used for the project is made with the Code Institute template linked [here](https://github.com/Code-Institute-Org/gitpod-full-template). 
+    2. Using pip3, install **[Django gunicorn](https://www.djangoproject.com/)**
+    3. Using pip3, install **dj_database_url psycopg2**
+    4. Using pip3, install **dj3-cloudinary-storage**
+    5. Run **pip3 freeze --local > requirements.txt** so installments /dependencies can work on Heroku.
+    6. Create Django project using **django-admin startproject** on terminal
+    7. Create Django app using **python3 manage.py startapp** on terminal
+    8. In settings.py, add installed the app under **INSTALLED_APPS**
+    9. Any changes in database (changing models, creating a new app), run migrations to the database using the command **python3 manage.py makemigrations** and then **python3 manage.py migrate**
+    10. [Create an account for Heroku](https://id.heroku.com/login)
+    11. On the Heroku dashboard, go to **Create new app**, give it a name and select region and submit.
+    12. On Heroku, under **Resources**, search up **Postgres** in **Add-ons** and select **Heroku Postgres**.
+    13. On Heroku, under the **Settings** tab, click on **Reveal Config vars**, copy the **DATABASE_URL**. 
+    14. In Gitpod, create a file called **env.py** (should already be in git ignore file in template used). Import os, and set up the **DATABASE_URL** environment variable where the Heroku **DATABASE_URL** will be pasted. 
+    15. In **env.py**, also create another environment variable for **SECRET_KEY** and create your secret key. Copy the **SECRET_KEY** value.
+    16. In Heroku, in **Config vars**, create a new **Config var** for **SECRET_KEY** and paste your secret key and click add. 
+    16. In Gitpod, go to **settings.py** and import os. Import **dj_database_url** and create if statement to check if **env.py** is a file, to import **env**.
+    17. In **SECRET_KEY** section in **settings.py**, import os.environ **SECRET_KEY**.
+    18. In **settings.py**, comment out the **DATABASES** and add in **DATABASES** to add **dj_database_url** from **env.py** file. 
+    19. In Heroku, add another **Config var**, KEY: PORT/ Value: 8000
+    20. Create a [Cloudinary account](https://cloudinary.com/). Copy the **API Environment variable**
+    21. In Gitpod, in **env.py**, add in the **CLOUDINARY_URL** and paste the **API Environment variable**.
+    22. In Heroku, create another **Config var** for **CLOUDINARY_URL** and paste in the value from **API Environment variable**
+    23. In Heroku, add another key for **DISABLE_COLLECTSTATIC** and set it to **1** since there are no static files currently. 
+    24. In **settings.py**, add in Cloudinary libraries under **INSTALLED_APPS**
+    25. In **settings.py**, add in **STATICFILES_STORAGE** to install Cloudinary further. Also set up **STATICFILES_DIRS** to connect to static. Create **MEDIA_URL** for **/media/** and set **DEFAULT_FILE_STORAGE** for Cloudinary media storage. 
+    26. At the top of **settings.py**, create **TEMPLATES_DIR** to join base directory and templates.
+    27. In **settings.py**, set **DIRS** in **TEMPLATES** to match **DIRS** to **TEMPALTE_DIR**.
+    28. In **settings.py**, add your Heroku app name followed by herokuapp.com in **ALLOWED_HOSTS**, as well as **localhost**.
+    29. In Gitpod, create **media**, **static**, and **templates** folders. 
+    30. In Gitpod, create a **Procfile**. Type in **web: gunicorn [projectname].wsgi**
+    31. Commit and push these changes onto GitHub.
+    32. In Heroku, under the **deploy** tab, choose **GitHub** as deployment method, login to GitHub, and search for your project repo. Click **manual deploy** (or **automatic deploy** if you want GitHub pushes to deploy to Heroku each time)
+    33. When deployment is successful, click **open app** to see your deployment. 
+    **Final deplyoment**
+    34. In **settings.py**, ensure **DEBUG** is **False** !!!!!!
+    35. In **settings.py**, create the setting **X_FRAME_OPTIONS** and set to **SAMEORIGIN**.
+    36. Commit and push these changes onto GitHub.
+    37. In Heroku, in **Reveal Config Vars**, remove **DISABLE_COLLECTSTATIC** variable. Under **Deploy**, scroll down to bottom and deploy branch. 
+
+- The following steps were taken for the cloning process: 
+
+  1. Log in to **[GitHub](https://github.com/)**.
+  2. Click on the profile icon to locate **'Your repositories'**. 
+  3. On the repository page, click on the repository you wish to clone.
+  4. Under **'Code'**, see the different cloning options, HTTPS, SSH, and GitHub CLI. Click the prefered cloning option, and then copy the link provided. 
+  5. Open **Terminal**.
+  6. In Terminal, change the current working directory to the desired location of the cloned directory.
+  7. Type git clone, and then paste the URL copied from GitHub earlier. 
+  8. Type **Enter** to create the local clone. 
+
+## Credits
+
+### Code
+
+### Acknowledgements
+
+
+
+
+
+
+
+
+
+
