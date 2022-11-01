@@ -9,71 +9,73 @@
 
     - Authentication
 
-    1. As a **user** I **cannot edit/delete posts/comments that are not mine** so that **I can be assured that my posts are protected and can only be edited by me.**
+        1. As a **user** I **cannot edit/delete posts/comments that are not mine** so that **I can be assured that my posts are protected and can only be edited by me.**
 
-    2. As a **user** I can **maintain my logged-in status** so that **I will not need to constantly log in when not on the website for a few hours, and can log out manually whenever I want to log out.**
+        2. As a **user** I can **maintain my logged-in status** so that **I will not need to constantly log in when not on the website for a few hours, and can log out manually whenever I want to log out.**
 
-    3. As a **user** I can **sign up easily with just a username and password** so that **I have the ability to create posts or comments without having to share my email address.**
+        3. As a **user** I can **sign up easily with just a username and password** so that **I have the ability to create posts or comments without having to share my email address.**
 
-    4. As a **user** I can **easily log out** so that **I can have more security on my account.**
+        4. As a **user** I can **easily log out** so that **I can have more security on my account.**
 
-    5. As a **user** I can **see whether I am logged in or not** so that **I will know if I will need to log in if I am not.**
+        5. As a **user** I can **see whether I am logged in or not** so that **I will know if I will need to log in if I am not.**
 
-    6. As a **user** I can **easily log in** so that **I can quickly post, add more comments, or delete content if I wish.**
+        6. As a **user** I can **easily log in** so that **I can quickly post, add more comments, or delete content if I wish.**
 
     - Posts
 
-    1. As a **user** I can **create new posts** so that **I can share images, my thoughts, or what I'm doing.**
+        1. As a **user** I can **create new posts** so that **I can share images, my thoughts, or what I'm doing.**
 
-    2. As a **user** I can **edit posts** so that **I can change my posts, images, etc whenever I change my mind about what I posted or wish to remove/add details.**
+        2. As a **user** I can **edit posts** so that **I can change my posts, images, etc whenever I change my mind about what I posted or wish to remove/add details.**
 
-    3. As a **user** I can **delete my posts** so that **I can get rid of my posts that I no longer want to be shared.**
+        3. As a **user** I can **delete my posts** so that **I can get rid of my posts that I no longer want to be shared.**
 
-    4. As a **user** I can **view the details of a post** so that **I can read more information about the post such as when it was created, who created it, if it was edited, read the comments, etc.**
+        4. As a **user** I can **view the details of a post** so that **I can read more information about the post such as when it was created, who created it, if it was edited, read the comments, etc.**
 
-    5. As a **user** I can **like posts** so that **I can share my appreciation for the post and show the world and the author that their post is great.**
+        5. As a **user** I can **like posts** so that **I can share my appreciation for the post and show the world and the author that their post is great.**
 
-    6. As a **user** I can **remove likes on a post** so that **I can change my mind about whether I like the post or not.**
+        6. As a **user** I can **remove likes on a post** so that **I can change my mind about whether I like the post or not.**
 
     - Comments
 
-    1. As a **user** I can **post a comment on a post** so that **I can contribute discussion to a post or share my thoughts about a post.**
+        1. As a **user** I can **post a comment on a post** so that **I can contribute discussion to a post or share my thoughts about a post.**
 
-    2. As a **user** I can **delete my comments on a post** so that **I can remove comments if I no longer want my comments to be public.**
+        2. As a **user** I can **delete my comments on a post** so that **I can remove comments if I no longer want my comments to be public.**
 
-    3. As a **user** I can **read comments on a post** so that **I can read what others think about the post and read the discussion happening.**
+        3. As a **user** I can **read comments on a post** so that **I can read what others think about the post and read the discussion happening.**
 
-    4. As a **user** I can **edit my comments** so that **have the possibility to remove or add more details to my existing comments.**
+        4. As a **user** I can **edit my comments** so that **have the possibility to remove or add more details to my existing comments.**
 
     - Navigation
 
-    1. As a **user** I can **go back or forward to the next page** so that **I can see the footer of the website and choose to move onto the next on the next page or go back a page to see more posts.**
+        1. As a **user** I can **go back or forward to the next page** so that **I can see the footer of the website and choose to move onto the next on the next page or go back a page to see more posts.**
 
-    2. As a **user** I can **see the navigation bar at the top of every page** so that **I can easily navigate between pages.**
+        2. As a **user** I can **see the navigation bar at the top of every page** so that **I can easily navigate between pages.**
 
-    3. As a **user** I can **navigate through pages quickly** so that **I can view content smoothly without the pages being refreshed**
+        3. As a **user** I can **navigate through pages quickly** so that **I can view content smoothly without the pages being refreshed**
 
-    4. As a **user** I can **a nice 404 page consistent with the site layout** so that **I can be communicated with if I have reached an invalid web page.**
+        4. As a **user** I can **a nice 404 page consistent with the site layout** so that **I can be communicated with if I have reached an invalid web page.**
 
-    5. As a **user** I can **have the navigation bar customed to my logged-in or out status** so that **I can have the options to log in or sign up when logged out, or have the options to create a post, view my profile, sign out, etc when logged in.**
+        5. As a **user** I can **have the navigation bar customed to my logged-in or out status** so that **I can have the options to log in or sign up when logged out, or have the options to create a post, view my profile, sign out, etc when logged in.**
 
     - Profile
 
-    1. As a **user** I can **view user avatars** so that **easily identify users of the website.**
+        1. As a **user** I can **view user avatars** so that **easily identify users of the website.**
 
-    2. As a **user** I can **view a detailed page of users** so that **I can see their posts and learn more about the user. I can also see their following count, followers count, etc.**
+        2. As a **user** I can **view a detailed page of users** so that **I can see their posts and learn more about the user. I can also see their following count, followers count, etc.**
 
-    3. As a **user** I can **follow or unfollow other users** so that **I can see or choose to remove posts by specific users in my posts feed.**
+        3. As a **user** I can **follow or unfollow other users** so that **I can see or choose to remove posts by specific users in my posts feed.**
 
     - General
 
-    1. As a **user** I can **search for posts or users in a search box** so that **I can quickly find specific posts or users that I am wanting to look for.**
+        1. As a **user** I can **search for posts or users in a search box** so that **I can quickly find specific posts or users that I am wanting to look for.**
 
-    2. As a **user** I can **always be notified when my interactions on the website are successful (creating posts/comments, liking/unliking posts, unfollowing/following users, logging in/out, etc** so that **I will always be informed of my actions and whether they are successful or not.**
+        2. As a **user** I can **always be notified when my interactions on the website are successful (creating posts/comments, liking/unliking posts, unfollowing/following users, logging in/out, etc** so that **I will always be informed of my actions and whether they are successful or not.**
 
 ### Database Model
 
 - Database model has been created using the program Whimsical
+
+![Screenshot of database model](documentation/database-model.png)
 
 
 ### Kanban Board
