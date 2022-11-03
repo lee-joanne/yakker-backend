@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'rest_framework',
     'yakfile',
 ]
 
@@ -83,6 +84,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'yakker.wsgi.application'
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 10
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
