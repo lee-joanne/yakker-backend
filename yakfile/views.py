@@ -1,5 +1,6 @@
 from rest_framework import generics
 from .models import Yakfile
+from .serializers import YakfileSerializer
 
 
 class ListYakfile(generics.ListAPIView):
