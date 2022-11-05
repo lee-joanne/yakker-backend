@@ -21,5 +21,3 @@ class DetailYakfile(generics.RetrieveUpdateAPIView):
     queryset = Yakfile.objects.all()
     permission_classes = [AuthenticatedOrReadOnly]
     serializer_class = YakfileSerializer
-
-
