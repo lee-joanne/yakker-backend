@@ -36,7 +36,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = []
-CSRF_TRUSTED_ORIGINS = ['https://8000-leejoanne-yakkerbackend-jzwtkdcqdsn.ws-eu73.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-leejoanne-yakkerbackend-jzwtkdcqdsn.ws-eu74.gitpod.io']
 
 
 # Application definition
@@ -86,7 +86,10 @@ WSGI_APPLICATION = 'yakker.wsgi.application'
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 10,
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+    ]
 }
 
 # Database

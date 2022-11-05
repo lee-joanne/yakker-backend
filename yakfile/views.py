@@ -4,14 +4,18 @@ from .serializers import YakfileSerializer
 
 
 class ListYakfile(generics.ListAPIView):
+    """
+    Class-based view to list all yakfiles.
+    """
     queryset = Yakfile.objects.all().order_by('-created_at')
     serializer_class = YakfileSerializer
 
 
 class DetailYakfile(generics.RetrieveUpdateAPIView):
     """
-    Retrieve or update a profile if you're the owner.
+    Class-based detailed view to retrieve or update a profile if you're the owner.
     """
     queryset = Yakfile.objects.annotate().order_by('-created_at')
     serializer_class = YakfileSerializer
+    
 
