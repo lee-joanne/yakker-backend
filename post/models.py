@@ -15,6 +15,7 @@ class Post(models.Model):
     )
     content = models.TextField(blank=True)
     title = models.CharField(max_length=300)
+    reyakks = models.ManyToManyField(User, related_name="reyakks", blank=True)
 
     class Meta:
         """
@@ -26,4 +27,4 @@ class Post(models.Model):
         """
         Function to create the string for representing yakfile model in admin
         """
-        return f"{self.id}'s post called {self.title}"
+        return f"{self.author}'s post called '{self.title}'"
