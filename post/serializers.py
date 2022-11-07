@@ -1,4 +1,3 @@
-from rest_framework.exceptions import ValidationError
 from django.core.files.images import get_image_dimensions
 from django.contrib.auth.models import User
 from rest_framework import serializers
@@ -13,6 +12,26 @@ class PostSerializer(serializers.ModelSerializer):
     def get_is_author(self, obj):
         request = self.context.get('request', None)
         return request.user == obj.author
+
+    def validate_image(self, value):
+
+        MEGABYTE_LIMIT = 1
+        REQUIRED_WIDTH = 2500
+        REQUIRED_HEIGHT = 2500
+
+        if value.size > 1024 * 1024 * MEGABYTE_LIMIT:
+            raise serializers.ValidationError(
+                f'Sorry! The image width is larger than {MEGABYTE_LIMIT} mb!'
+            )
+        if value.image.width > REQUIRED_WIDTH:
+            raise serializers.ValidationError(
+                f'Sorry! The image width is larger than {REQUIRED_WIDTH} px!'
+            )
+        if value.image.height > REQUIRED_HEIGHT:
+            raise serializers.ValidationError(
+                f'Sorry! The image height is larger than {REQUIRED_HEIGHT} px!'
+            )
+        return value
 
     class Meta:
         model = Post

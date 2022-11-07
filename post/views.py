@@ -12,6 +12,9 @@ class ListPost(generics.ListCreateAPIView):
     permission_classes = [AuthenticatedOrReadOnly]
     serializer_class = PostSerializer
 
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
+
 
 class DetailPost(generics.RetrieveUpdateDestroyAPIView):
     """
