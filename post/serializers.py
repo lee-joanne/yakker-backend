@@ -7,7 +7,7 @@ class PostSerializer(serializers.ModelSerializer):
     author = serializers.ReadOnlyField(source='author.username')
     is_author = serializers.SerializerMethodField()
     reyakks_count = serializers.SerializerMethodField()
-    reyakks = serializers.ReadOnlyField(source='author.username')
+    reyakks = serializers.ReadOnlyField(source='reyakks.yakfile')
 
     def get_is_author(self, obj):
         request = self.context.get('request', None)
