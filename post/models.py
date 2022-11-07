@@ -15,7 +15,6 @@ class Post(models.Model):
     )
     content = models.TextField(blank=True)
     title = models.CharField(max_length=300)
-    reyakks = models.ManyToManyField(User, related_name="reyakks", blank=True)
 
     class Meta:
         """

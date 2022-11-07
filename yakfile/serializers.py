@@ -8,6 +8,7 @@ class YakfileSerializer(serializers.ModelSerializer):
     author = serializers.ReadOnlyField(source='author.username')
     is_author = serializers.SerializerMethodField()
     author_age_days = serializers.SerializerMethodField()
+    post_count = serializers.ReadOnlyField()
 
     def get_is_author(self, obj):
         request = self.context.get('request', None)
@@ -16,8 +17,9 @@ class YakfileSerializer(serializers.ModelSerializer):
     def get_author_age_days(self, obj):
         return (now() - obj.created_at).days
 
+
     class Meta:
         model = Yakfile
         fields = [
-            'id', 'author', 'created_at', 'image', 'content', 'is_author', 'author_age_days',
+            'id', 'author', 'created_at', 'image', 'content', 'is_author', 'author_age_days', 'post_count'
         ]
