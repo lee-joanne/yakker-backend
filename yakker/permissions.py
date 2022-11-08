@@ -12,3 +12,14 @@ class AuthenticatedOrReadOnly(permissions.BasePermission):
             return True
 
         return obj.author == request.user
+
+
+class AuthenticatedOrReadOnlyComments(permissions.BasePermission):
+    """
+    Custom permission created to allow commenters to edit their comments only.
+    """
+    def has_object_permission(self, request, view, obj):
+        if request.method in permissions.SAFE_METHODS:
+            return True
+
+        return obj.commenter == request.user

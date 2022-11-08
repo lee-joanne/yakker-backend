@@ -1,4 +1,3 @@
-from django.core.files.images import get_image_dimensions
 from django.contrib.auth.models import User
 from rest_framework import serializers
 from .models import Post
@@ -37,5 +36,5 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = [
             'id', 'author', 'created_at', 'updated_at', 'title',
-            'image', 'content', 'is_author', 'yakfile_image'
+            'image', 'content', 'is_author', 'yakfile_image',
         ]

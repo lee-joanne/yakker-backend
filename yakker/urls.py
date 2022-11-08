@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('', include('yakfile.urls')),
-    path('', include('post.urls'))
+    path('', include('post.urls')),
+    path('', include('comment.urls'))
 ]
