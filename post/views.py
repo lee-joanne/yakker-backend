@@ -6,7 +6,7 @@ from .serializers import PostSerializer
 
 class ListPost(generics.ListCreateAPIView):
     """
-    Class-based view to list all yakfiles.
+    Class-based view to list all posts.
     """
     queryset = Post.objects.all().order_by('-created_at')
     permission_classes = [AuthenticatedOrReadOnly]
@@ -18,8 +18,8 @@ class ListPost(generics.ListCreateAPIView):
 
 class DetailPost(generics.RetrieveUpdateDestroyAPIView):
     """
-    Class-based detailed view to retrieve or update a profile
-    if you're the owner.
+    Class-based detailed view to retrieve a post.
+    Can edit, or delete a post if you're the owner.
     """
     queryset = Post.objects.all()
     permission_classes = [AuthenticatedOrReadOnly]

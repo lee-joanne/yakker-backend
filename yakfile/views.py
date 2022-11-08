@@ -18,7 +18,7 @@ class ListYakfile(generics.ListAPIView):
 
 class DetailYakfile(generics.RetrieveUpdateAPIView):
     """
-    Class-based detailed view to retrieve or update a profile 
+    Class-based detailed view to retrieve or update a profile
     if you're the owner.
     """
     queryset = Yakfile.objects.annotate(
