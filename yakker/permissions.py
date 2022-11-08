@@ -3,7 +3,7 @@ from rest_framework import permissions
 # https://www.django-rest-framework.org/tutorial/4-authentication-and-permissions/
 
 
-class AuthenticatedOrReadOnly(permissions.BasePermission):
+class AuthorOrReadOnly(permissions.BasePermission):
     """
     Custom permission created to allow users to edit their posts only.
     """
@@ -14,7 +14,7 @@ class AuthenticatedOrReadOnly(permissions.BasePermission):
         return obj.author == request.user
 
 
-class AuthenticatedOrReadOnlyComments(permissions.BasePermission):
+class CommenterOrReadOnly(permissions.BasePermission):
     """
     Custom permission created to allow commenters to edit their comments only.
     """

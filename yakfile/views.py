@@ -1,7 +1,7 @@
 from django.db.models import Count
 from rest_framework import generics
 from .models import Yakfile
-from yakker.permissions import AuthenticatedOrReadOnly
+from yakker.permissions import AuthorOrReadOnly
 from .serializers import YakfileSerializer
 
 
@@ -12,7 +12,7 @@ class ListYakfile(generics.ListAPIView):
     queryset = Yakfile.objects.annotate(
         post_count=Count('author__post', distinct=True)
     ).order_by('-created_at')
-    permission_classes = [AuthenticatedOrReadOnly]
+    permission_classes = [AuthorOrReadOnly]
     serializer_class = YakfileSerializer
 
 
@@ -24,6 +24,5 @@ class DetailYakfile(generics.RetrieveUpdateAPIView):
     queryset = Yakfile.objects.annotate(
         post_count=Count('author__post', distinct=True)
     ).order_by('-created_at')
-    permission_classes = [AuthenticatedOrReadOnly]
-    permission_classes = [AuthenticatedOrReadOnly]
+    permission_classes = [AuthorOrReadOnly]
     serializer_class = YakfileSerializer

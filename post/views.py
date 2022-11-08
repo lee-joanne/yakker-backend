@@ -1,6 +1,6 @@
 from rest_framework import generics, permissions
 from .models import Post
-from yakker.permissions import AuthenticatedOrReadOnly
+from yakker.permissions import AuthorOrReadOnly
 from .serializers import PostSerializer
 
 
@@ -22,5 +22,5 @@ class DetailPost(generics.RetrieveUpdateDestroyAPIView):
     Can edit, or delete a post if you're the author.
     """
     queryset = Post.objects.all()
-    permission_classes = [AuthenticatedOrReadOnly]
+    permission_classes = [AuthorOrReadOnly]
     serializer_class = PostSerializer
