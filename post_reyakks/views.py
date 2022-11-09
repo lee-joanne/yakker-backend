@@ -1,4 +1,5 @@
 from rest_framework import generics, permissions
+from yakker.permissions import PostReyakkerOrReadOnly
 from django_filters.rest_framework import DjangoFilterBackend
 from .models import PostReyakks
 from .serializers import PostReyakksSerializer
@@ -22,5 +23,5 @@ class DetailPostReyakks(generics.RetrieveDestroyAPIView):
     Can delete a comment if you're the liker.
     """
     queryset = PostReyakks.objects.all()
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+    permission_classes = [PostReyakkerOrReadOnly]
     serializer_class = PostReyakksSerializer

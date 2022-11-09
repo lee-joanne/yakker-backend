@@ -23,3 +23,25 @@ class CommenterOrReadOnly(permissions.BasePermission):
             return True
 
         return obj.commenter == request.user
+
+
+class PostReyakkerOrReadOnly(permissions.BasePermission):
+    """
+    Custom permission created to allow only the reyakker to delete their reyakk on posts.
+    """
+    def has_object_permission(self, request, view, obj):
+        if request.method in permissions.SAFE_METHODS:
+            return True
+
+        return obj.post_reyakker == request.user
+
+
+class CommentReyakkerOrReadOnly(permissions.BasePermission):
+    """
+    Custom permission created to allow only the reyakker to delete their reyakk on posts.
+    """
+    def has_object_permission(self, request, view, obj):
+        if request.method in permissions.SAFE_METHODS:
+            return True
+
+        return obj.comment_reyakker == request.user
