@@ -5,7 +5,7 @@ from comment.models import Comment
 
 class CommentReyakks(models.Model):
     comment_reyakker = models.ForeignKey(User, on_delete=models.CASCADE)
-    comment = models.ForeignKey(Comment, related_name='comment_reyakker', on_delete=models.CASCADE)
+    comment = models.ForeignKey(Post, related_name='comment_reyakker', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
