@@ -22,5 +22,6 @@ urlpatterns = [
     path('', include('yakfile.urls')),
     path('', include('post.urls')),
     path('', include('comment.urls')),
-    path('', include('post_reyakks.urls'))
+    path('', include('post_reyakks.urls')),
+    path('', include('comment_reyakks.urls'))
 ]
