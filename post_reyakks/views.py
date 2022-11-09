@@ -13,7 +13,7 @@ class ListPostReyakks(generics.ListCreateAPIView):
     serializer_class = PostReyakksSerializer
 
     def perform_create(self, serializer):
-        serializer.save(liker=self.request.user)
+        serializer.save(post_reyakker=self.request.user)
 
 
 class DetailPostReyakks(generics.RetrieveDestroyAPIView):
