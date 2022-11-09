@@ -21,5 +21,6 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('', include('yakfile.urls')),
     path('', include('post.urls')),
-    path('', include('comment.urls'))
+    path('', include('comment.urls')),
+    path('', include('reyakks.urls'))
 ]
