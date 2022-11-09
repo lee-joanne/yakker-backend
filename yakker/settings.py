@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'yakfile',
     'post',
     'comment',
-    'reyakks',
+    'post_reyakks',
 ]
 
 MIDDLEWARE = [
