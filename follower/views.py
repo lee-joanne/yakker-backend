@@ -6,7 +6,7 @@ from .serializers import FollowerSerializer
 
 class ListFollower(generics.ListCreateAPIView):
     """
-    Class-based view to list all posts.
+    Class-based view to list all followers.
     """
     queryset = Follower.objects.all()
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
@@ -18,8 +18,8 @@ class ListFollower(generics.ListCreateAPIView):
 
 class DetailFollower(generics.RetrieveDestroyAPIView):
     """
-    Class-based detailed view to retrieve a post.
-    Can edit, or delete a post if you're the author.
+    Class-based detailed view to retrieve a follower.
+    Can unfollow if you are the author (follower).
     """
     queryset = Follower.objects.all()
     permission_classes = [AuthorOrReadOnly]
