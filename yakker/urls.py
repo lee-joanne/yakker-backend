@@ -24,5 +24,5 @@ urlpatterns = [
     path('', include('comment.urls')),
     path('', include('post_reyakks.urls')),
     path('', include('comment_reyakks.urls')),
-    # path('', include('follower.urls')),
+    path('', include('follower.urls')),
 ]
