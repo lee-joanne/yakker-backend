@@ -2,12 +2,14 @@ from django.db import IntegrityError
 from django.contrib.auth.models import User
 from rest_framework import serializers
 from .models import Post
+from post_reyakks.models import PostReyakks
 
 
 class PostSerializer(serializers.ModelSerializer):
     author = serializers.ReadOnlyField(source='author.username')
     is_author = serializers.SerializerMethodField()
     yakfile_image = serializers.ReadOnlyField(source='author.yakfile.image.url')
+    post_reyakks_id = serializers.SerializerMethodField()
 
     def get_is_author(self, obj):
         request = self.context.get('request', None)
@@ -33,9 +35,19 @@ class PostSerializer(serializers.ModelSerializer):
             )
         return value
 
+    def get_post_reyakks_id(self, obj):
+        user = self.context['request'].user
+        if user.is_authenticated:
+            post_reyakks = PostReyakks.objects.filter(
+                post_reyakker=user, post=obj
+            ).first()
+            return post_reyakks.id if post_reyakks else None
+        return None
+
+
     class Meta:
         model = Post
         fields = [
             'id', 'author', 'created_at', 'updated_at', 'title',
-            'image', 'content', 'is_author', 'yakfile_image',
+            'image', 'content', 'is_author', 'yakfile_image', 'post_reyakks_id'
         ]

@@ -1,5 +1,4 @@
 from rest_framework import generics, permissions
-from django.shortcuts import get_object_or_404
 from django.core.exceptions import PermissionDenied
 from .models import Post
 from yakker.permissions import AuthorOrReadOnly
