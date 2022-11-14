@@ -1,7 +1,9 @@
 from rest_framework import generics, permissions
+from django.shortcuts import get_object_or_404
+from django.core.exceptions import PermissionDenied
 from yakker.permissions import PostReyakkerOrReadOnly
 from django_filters.rest_framework import DjangoFilterBackend
-from .models import PostReyakks
+from .models import PostReyakks, Post
 from .serializers import PostReyakksSerializer
 
 
@@ -14,7 +16,11 @@ class ListPostReyakks(generics.ListCreateAPIView):
     serializer_class = PostReyakksSerializer
 
     def perform_create(self, serializer):
-        serializer.save(liker=self.request.user)
+        post = get_object_or_404(Post, pk=serializer.initial_data['post'])
+        if post.author == self.request.user:
+            raise PermissionDenied
+        else:
+            serializer.save(post_reyakker=self.request.user)
 
 
 class DetailPostReyakks(generics.RetrieveDestroyAPIView):
