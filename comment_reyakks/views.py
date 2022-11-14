@@ -1,7 +1,9 @@
 from rest_framework import generics, permissions
+from django.shortcuts import get_object_or_404
+from django.core.exceptions import PermissionDenied
 from yakker.permissions import CommentReyakkerOrReadOnly
 from django_filters.rest_framework import DjangoFilterBackend
-from .models import CommentReyakks
+from .models import CommentReyakks, Comment
 from .serializers import CommentReyakksSerializer
 
 
@@ -14,7 +16,11 @@ class ListCommentReyakks(generics.ListCreateAPIView):
     serializer_class = CommentReyakksSerializer
 
     def perform_create(self, serializer):
-        serializer.save(comment_reyakker=self.request.user)
+        comment = get_object_or_404(Comment, pk=serializer.initial_data['comment'])
+        if comment.commenter == self.request.user:
+            raise PermissionDenied
+        else:
+            serializer.save(comment_reyakker=self.request.user)
 
 
 class DetailCommentReyakks(generics.RetrieveDestroyAPIView):
