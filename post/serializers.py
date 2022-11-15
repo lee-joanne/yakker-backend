@@ -44,7 +44,6 @@ class PostSerializer(serializers.ModelSerializer):
             return post_reyakks.id if post_reyakks else None
         return None
 
-
     class Meta:
         model = Post
         fields = [
