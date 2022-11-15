@@ -16,11 +16,7 @@ class ListPostReyakks(generics.ListCreateAPIView):
     serializer_class = PostReyakksSerializer
 
     def perform_create(self, serializer):
-        post = get_object_or_404(Post, pk=serializer.initial_data['post'])
-        if post.author == self.request.user:
-            raise PermissionDenied
-        else:
-            serializer.save(post_reyakker=self.request.user)
+        serializer.save(post_reyakker=self.request.user)
 
 
 class DetailPostReyakks(generics.RetrieveDestroyAPIView):
