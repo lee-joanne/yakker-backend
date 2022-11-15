@@ -30,7 +30,6 @@ class YakfileSerializer(serializers.ModelSerializer):
             followed_user = Follower.objects.filter(
                 author=user, followed_user=obj.author
             ).first()
-            print(followed_user)
             return followed_user.id if followed_user else None
         return None
 
