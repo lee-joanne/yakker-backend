@@ -16,7 +16,12 @@ class ListCommentReyakks(generics.ListCreateAPIView):
     serializer_class = CommentReyakksSerializer
 
     def perform_create(self, serializer):
-        serializer.save(comment_reyakker=self.request.user)
+        comment = get_object_or_404(Comment, pk=serializer.initial_data['comment'])
+        if comment.commenter == self.request.user:
+            raise PermissionDenied
+        else:
+            serializer.save(comment_reyakker=self.request.user)
+
 
 
 class DetailCommentReyakks(generics.RetrieveDestroyAPIView):
