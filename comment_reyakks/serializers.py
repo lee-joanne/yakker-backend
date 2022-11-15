@@ -9,7 +9,7 @@ class CommentReyakksSerializer(serializers.ModelSerializer):
     class Meta:
         model = CommentReyakks
         fields = [
-            'id', 'comment_reyakker', 'created_at', 'comment'
+            'id', 'comment_reyakker', 'created_at', 'comment',
         ]
 
     def create(self, validated_data):
