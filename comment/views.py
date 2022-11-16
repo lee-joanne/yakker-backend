@@ -21,7 +21,7 @@ class ListComment(generics.ListCreateAPIView):
     ]
     ordering_fields = [
         'comment_reyakks_count',
-        'comment_reyakks_count__created_at',
+        'comment_reyakker__created_at',
     ]
 
     def perform_create(self, serializer):
