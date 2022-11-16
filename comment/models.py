@@ -23,4 +23,4 @@ class Comment(models.Model):
         """
         Function to create the string for representing yakfile model in admin
         """
-        return f"{self.commenter}'s comment on '{self.post}'"
+        return f"{self.commenter}'s commented '{self.content}'"

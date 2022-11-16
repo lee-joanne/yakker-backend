@@ -36,7 +36,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = []
-CSRF_TRUSTED_ORIGINS = ['https://8000-leejoanne-yakkerbackend-jzwtkdcqdsn.ws-eu75.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-leejoanne-yakkerbackend-jzwtkdcqdsn.ws-eu74.gitpod.io']
 
 
 # Application definition

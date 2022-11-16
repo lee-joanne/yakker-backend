@@ -1,4 +1,5 @@
-from rest_framework import generics, permissions
+from django.db.models import Count
+from rest_framework import generics, permissions, filters
 from yakker.permissions import CommenterOrReadOnly
 from django_filters.rest_framework import DjangoFilterBackend
 from .models import Comment
@@ -9,11 +10,19 @@ class ListComment(generics.ListCreateAPIView):
     """
     Class-based view to list all comments.
     """
-    queryset = Comment.objects.all()
+    queryset = Comment.objects.annotate(
+        comment_reyakks_count=Count('comment_reyakker', distinct=True),
+        ).order_by('-created_at')
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = CommentSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['post']
+    filter_backends = [
+        filters.OrderingFilter
+    ]
+    ordering_fields = [
+        'comment_reyakks_count',
+        'comment_reyakks_count__created_at',
+    ]
 
     def perform_create(self, serializer):
         serializer.save(commenter=self.request.user)
@@ -24,6 +33,8 @@ class DetailComment(generics.RetrieveUpdateDestroyAPIView):
     Class-based detailed view to retrieve a comment.
     Can edit, or delete a comment if you're the author.
     """
-    queryset = Comment.objects.all()
+    queryset = Comment.objects.annotate(
+        comment_reyakks_count=Count('comment_reyakker', distinct=True),
+        ).order_by('-created_at')
     permission_classes = [CommenterOrReadOnly]
     serializer_class = CommentSerializer

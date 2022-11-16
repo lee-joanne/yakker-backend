@@ -6,6 +6,7 @@ from comment_reyakks.models import CommentReyakks
 class CommentSerializer(serializers.ModelSerializer):
     commenter = serializers.ReadOnlyField(source='commenter.username')
     comment_reyakks_id = serializers.SerializerMethodField()
+    comment_reyakks_count = serializers.ReadOnlyField()
 
     def get_comment_reyakks_id(self, obj):
         user = self.context['request'].user
@@ -20,5 +21,5 @@ class CommentSerializer(serializers.ModelSerializer):
         model = Comment
         fields = [
             'id', 'commenter', 'created_at', 'updated_at', 'post',
-            'content', 'comment_reyakks_id',
+            'content', 'comment_reyakks_id', 'comment_reyakks_count',
         ]
