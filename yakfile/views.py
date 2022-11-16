@@ -1,4 +1,5 @@
 from django.db.models import Count
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics, filters
 from .models import Yakfile
 from yakker.permissions import AuthorOrReadOnly
@@ -17,7 +18,12 @@ class ListYakfile(generics.ListAPIView):
     permission_classes = [AuthorOrReadOnly]
     serializer_class = YakfileSerializer
     filter_backends = [
-        filters.OrderingFilter
+        filters.OrderingFilter,
+        DjangoFilterBackend,
+    ]
+    filterset_fields = [
+        # check who's following the user
+       'author__author__followed_user__yakfile'
     ]
     ordering_fields = [
         'post_count',
