@@ -15,9 +15,13 @@ class ListComment(generics.ListCreateAPIView):
         ).order_by('-created_at')
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = CommentSerializer
-    filter_backends = [DjangoFilterBackend]
     filter_backends = [
-        filters.OrderingFilter
+        filters.OrderingFilter,
+        DjangoFilterBackend
+    ]
+    filterset_fields = [
+        # retrieve all comments associated with given post
+        'post'
     ]
     ordering_fields = [
         'comment_reyakks_count',
