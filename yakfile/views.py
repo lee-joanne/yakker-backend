@@ -23,7 +23,9 @@ class ListYakfile(generics.ListAPIView):
     ]
     filterset_fields = [
         # check who's following the user
-       'author__author__followed_user__yakfile'
+        'author__author__followed_user__yakfile',
+        # check who the user is following
+        'author__followed_user__author__yakfile'
     ]
     ordering_fields = [
         'post_count',

@@ -25,7 +25,7 @@ class CommenterOrReadOnly(permissions.BasePermission):
 
 class PostReyakkerOrReadOnly(permissions.BasePermission):
     """
-    Custom permission created to allow only the reyakker to delete their reyakk on posts.
+    Custom permission created to allow only the reyakker to delete their reyakks on posts.
     """
     def has_object_permission(self, request, view, obj):
         if request.method in permissions.SAFE_METHODS:
