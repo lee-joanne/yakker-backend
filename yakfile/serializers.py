@@ -31,6 +31,8 @@ class YakfileSerializer(serializers.ModelSerializer):
     def get_following_id(self, obj):
         """
         Code on get_following_id taken from CI's DRF Example Project.
+        Gets the following id of user following the yakfile
+        if user is authenticated.
         """
         user = self.context['request'].user
         if user.is_authenticated:

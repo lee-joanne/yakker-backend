@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .views import root_route
+from utils.response import handler500
 
 urlpatterns = [
     path('', root_route),
@@ -31,4 +32,8 @@ urlpatterns = [
     path('', include('post_reyakks.urls')),
     path('', include('comment_reyakks.urls')),
     path('', include('follower.urls')),
+    path(
+        'handler500 = "core.utils.response.handler500',
+        handler500
+    ),
 ]
