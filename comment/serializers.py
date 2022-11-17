@@ -9,6 +9,10 @@ class CommentSerializer(serializers.ModelSerializer):
     comment_reyakks_count = serializers.ReadOnlyField()
 
     def get_comment_reyakks_id(self, obj):
+        """
+        Serializer method field to get comment
+        reyakks id number if user is authenticated.
+        """
         user = self.context['request'].user
         if user.is_authenticated:
             comment_reyakks = CommentReyakks.objects.filter(

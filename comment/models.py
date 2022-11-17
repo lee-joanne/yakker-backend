@@ -18,12 +18,12 @@ class Comment(models.Model):
 
     class Meta:
         """
-        Class Meta to set the order of the comments, newest first
+        Class Meta to set the order of the comments, newest first.
         """
         ordering = ['-created_at']
 
     def __str__(self):
         """
-        Function to create the string for representing yakfile model in admin
+        Function to create the string for representing Comment model in admin.
         """
         return f"{self.commenter}'s commented '{self.content}'"

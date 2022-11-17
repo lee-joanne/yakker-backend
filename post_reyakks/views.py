@@ -9,7 +9,7 @@ from .serializers import PostReyakksSerializer
 
 class ListPostReyakks(generics.ListCreateAPIView):
     """
-    Class-based view to list all post reyakks (likes).
+    Class-based view to list all post reyakks.
     """
     queryset = PostReyakks.objects.all()
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
@@ -25,8 +25,8 @@ class ListPostReyakks(generics.ListCreateAPIView):
 
 class DetailPostReyakks(generics.RetrieveDestroyAPIView):
     """
-    Class-based detailed view to retrieve a reyakks.
-    Can delete a comment if you're the liker.
+    Class-based detailed view to retrieve a post reyakk.
+    Can delete a reyakk if you're the reyakker.
     """
     queryset = PostReyakks.objects.all()
     permission_classes = [PostReyakkerOrReadOnly]

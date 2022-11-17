@@ -15,15 +15,22 @@ class YakfileSerializer(serializers.ModelSerializer):
     following_count = serializers.ReadOnlyField()
 
     def get_is_author(self, obj):
+        """
+        Serializer method field to check if logged in
+        user is the author.
+        """
         request = self.context.get('request', None)
         return request.user == obj.author
 
     def get_author_age_days(self, obj):
+        """
+        Serializer method field to get the yakfile age in days.
+        """
         return (now() - obj.created_at).days
 
     def get_following_id(self, obj):
         """
-        Code on get_following_id taken from CI's DRF Example Project
+        Code on get_following_id taken from CI's DRF Example Project.
         """
         user = self.context['request'].user
         if user.is_authenticated:

@@ -18,13 +18,13 @@ class Follower(models.Model):
 
     class Meta:
         """
-        Class Meta to set the order of the posts, newest first
+        Class Meta to set the order of the followers, newest first.
         """
         ordering = ['-created_at']
         unique_together = ['author', 'followed_user']
 
     def __str__(self):
         """
-        Function to create the string for representing yakfile model in admin
+        Function to create the string for representing Follower model in admin.
         """
         return f"{self.author} is following {self.followed_user}"

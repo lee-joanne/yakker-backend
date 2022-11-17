@@ -18,12 +18,12 @@ class Post(models.Model):
 
     class Meta:
         """
-        Class Meta to set the order of the posts, newest first
+        Class Meta to set the order of the posts, newest first.
         """
         ordering = ['-created_at']
 
     def __str__(self):
         """
-        Function to create the string for representing yakfile model in admin
+        Function to create the string for representing Post model in admin.
         """
         return f"{self.author}'s post called '{self.title}'"

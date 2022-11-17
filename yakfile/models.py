@@ -17,20 +17,20 @@ class Yakfile(models.Model):
 
     class Meta:
         """
-        Class Meta to set the order of the posts, newest first
+        Class Meta to set the order of the yakfiles, newest first
         """
         ordering = ['-created_at']
 
     def __str__(self):
         """
-        Function to create the string for representing yakfile model in admin
+        Function to create the string for representing Yakfile model in admin
         """
         return f"{self.author}'s yakfile"
 
 
 def create_yakfile(sender, instance, created, **kwargs):
     """
-    Function to create a profile automatically when new user is created.
+    Function to create a yakfile automatically when new user is created.
     Code taken from Code Institute's DRF API project.
     """
     if created:

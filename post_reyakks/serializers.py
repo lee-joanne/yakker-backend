@@ -15,6 +15,7 @@ class PostReyakksSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         """
         Integrity error check taken from Code Institute's DRF example project.
+        Ensures duplicate post reyakks returns error message to user.
         """
         try:
             return super().create(validated_data)

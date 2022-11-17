@@ -15,11 +15,18 @@ class PostSerializer(serializers.ModelSerializer):
     comment_count = serializers.ReadOnlyField()
 
     def get_is_author(self, obj):
+        """
+        Serializer method field to check if logged in
+        user is the author.
+        """
         request = self.context.get('request', None)
         return request.user == obj.author
 
     def validate_image(self, value):
-
+        """
+        Serializer function to ensure uploaded post image is
+        less than 1 MB and smaller than 2500 by 2500 px.
+        """
         MEGABYTE_LIMIT = 1
         REQUIRED_WIDTH = 2500
         REQUIRED_HEIGHT = 2500
@@ -39,6 +46,9 @@ class PostSerializer(serializers.ModelSerializer):
         return value
 
     def get_post_reyakks_id(self, obj):
+        """
+        Serializer method field to get post reyakks id.
+        """
         user = self.context['request'].user
         if user.is_authenticated:
             post_reyakks = PostReyakks.objects.filter(

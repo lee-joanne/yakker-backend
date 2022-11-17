@@ -13,10 +13,18 @@ class FollowerSerializer(serializers.ModelSerializer):
     is_author = serializers.SerializerMethodField()
 
     def get_is_author(self, obj):
+        """
+        Serializer method field to check if logged in
+        user is the author (follower).
+        """
         request = self.context.get('request', None)
         return request.user == obj.author
 
     def get_following_length_days(self, obj):
+        """
+        Serializer method field to get the length
+        of days followed in days.
+        """
         return (now() - obj.created_at).days
 
     class Meta:
@@ -34,6 +42,7 @@ class FollowerSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         """
         Integrity error check taken from Code Institute's DRF example project.
+        Ensures duplicate follows returns error message to user.
         """
         try:
             return super().create(validated_data)
