@@ -8,7 +8,8 @@ from post_reyakks.models import PostReyakks
 class PostSerializer(serializers.ModelSerializer):
     author = serializers.ReadOnlyField(source='author.username')
     is_author = serializers.SerializerMethodField()
-    yakfile_image = serializers.ReadOnlyField(source='author.yakfile.image.url')
+    yakfile_image = serializers.ReadOnlyField(
+        source='author.yakfile.image.url')
     post_reyakks_id = serializers.SerializerMethodField()
     reyakks_count = serializers.ReadOnlyField()
     comment_count = serializers.ReadOnlyField()
@@ -49,6 +50,16 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = [
-            'id', 'author', 'created_at', 'updated_at', 'title',
-            'image', 'content', 'is_author', 'yakfile_image', 'post_reyakks_id', 'reyakks_count', 'comment_count',
+            'id',
+            'author',
+            'created_at',
+            'updated_at',
+            'title',
+            'image',
+            'content',
+            'is_author',
+            'yakfile_image',
+            'post_reyakks_id',
+            'reyakks_count',
+            'comment_count',
         ]

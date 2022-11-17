@@ -6,8 +6,14 @@ class Follower(models.Model):
     """
     Class-based model for Follower.
     """
-    author = models.ForeignKey(User, related_name="author", on_delete=models.CASCADE)
-    followed_user = models.ForeignKey(User, related_name="followed_user", on_delete=models.CASCADE)
+    author = models.ForeignKey(
+        User,
+        related_name="author",
+        on_delete=models.CASCADE)
+    followed_user = models.ForeignKey(
+        User,
+        related_name="followed_user",
+        on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

@@ -7,7 +7,8 @@ from .models import Follower
 
 class FollowerSerializer(serializers.ModelSerializer):
     author = serializers.ReadOnlyField(source='author.username')
-    followed_username = serializers.ReadOnlyField(source='followed_user.username')
+    followed_username = serializers.ReadOnlyField(
+        source='followed_user.username')
     following_length_days = serializers.SerializerMethodField()
     is_author = serializers.SerializerMethodField()
 
@@ -21,9 +22,15 @@ class FollowerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Follower
         fields = [
-            'id', 'author', 'followed_user', 'created_at', 'followed_username', 'is_author', 'following_length_days',
+            'id',
+            'author',
+            'followed_user',
+            'created_at',
+            'followed_username',
+            'is_author',
+            'following_length_days',
         ]
-    
+
     def create(self, validated_data):
         """
         Integrity error check taken from Code Institute's DRF example project.

@@ -4,7 +4,8 @@ from .models import CommentReyakks
 
 
 class CommentReyakksSerializer(serializers.ModelSerializer):
-    comment_reyakker = serializers.ReadOnlyField(source='comment_reyakker.username')
+    comment_reyakker = serializers.ReadOnlyField(
+        source='comment_reyakker.username')
 
     class Meta:
         model = CommentReyakks

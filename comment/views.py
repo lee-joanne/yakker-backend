@@ -12,7 +12,7 @@ class ListComment(generics.ListCreateAPIView):
     """
     queryset = Comment.objects.annotate(
         comment_reyakks_count=Count('comment_reyakker', distinct=True),
-        ).order_by('-created_at')
+    ).order_by('-created_at')
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = CommentSerializer
     filter_backends = [
@@ -39,6 +39,6 @@ class DetailComment(generics.RetrieveUpdateDestroyAPIView):
     """
     queryset = Comment.objects.annotate(
         comment_reyakks_count=Count('comment_reyakker', distinct=True),
-        ).order_by('-created_at')
+    ).order_by('-created_at')
     permission_classes = [CommenterOrReadOnly]
     serializer_class = CommentSerializer

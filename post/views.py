@@ -13,7 +13,7 @@ class ListPost(generics.ListCreateAPIView):
     queryset = Post.objects.annotate(
         reyakks_count=Count('post_reyakker', distinct=True),
         comment_count=Count('comment', distinct=True),
-        ).order_by('-created_at')
+    ).order_by('-created_at')
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     serializer_class = PostSerializer
     filter_backends = [
@@ -24,7 +24,7 @@ class ListPost(generics.ListCreateAPIView):
     filterset_fields = [
         # user feed
         'author__followed_user__author__yakfile',
-        # user liked posts 
+        # user liked posts
         'post_reyakker__post_reyakker__yakfile',
         # user posts
         'author__yakfile',
@@ -52,6 +52,6 @@ class DetailPost(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.annotate(
         reyakks_count=Count('post_reyakker', distinct=True),
         comment_count=Count('comment', distinct=True),
-        ).order_by('-created_at')
+    ).order_by('-created_at')
     permission_classes = [AuthorOrReadOnly]
     serializer_class = PostSerializer

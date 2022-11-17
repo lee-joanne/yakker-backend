@@ -33,9 +33,18 @@ class YakfileSerializer(serializers.ModelSerializer):
             return followed_user.id if followed_user else None
         return None
 
-
     class Meta:
         model = Yakfile
         fields = [
-            'id', 'author', 'created_at', 'image', 'content', 'is_author', 'author_age_days', 'post_count', 'following_id', 'follower_count', 'following_count',
+            'id',
+            'author',
+            'created_at',
+            'image',
+            'content',
+            'is_author',
+            'author_age_days',
+            'post_count',
+            'following_id',
+            'follower_count',
+            'following_count',
         ]
