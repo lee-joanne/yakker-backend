@@ -36,9 +36,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['localhost', 'https://yakker-backend.herokuapp.com']
-CSRF_TRUSTED_ORIGINS = ['https://8000-leejoanne-yakkerbackend-jzwtkdcqdsn.ws-eu74.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-leejoanne-yakkerbackend-jzwtkdcqdsn.ws-eu74.gitpod.io', 'https://yakker-backend.herokuapp.com']
 
+ALLOWED_HOSTS = ['localhost', 'yakker-backend.herokuapp.com']
 
 # Application definition
 
