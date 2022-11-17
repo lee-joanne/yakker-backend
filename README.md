@@ -11,13 +11,18 @@
 
         1. As a **user** I **cannot edit/delete posts/comments that are not mine** so that **I can be assured that my posts are protected and can only be edited by me.**
 
-        2. As a **user** I can **sign up easily with just a username and password** so that **I have the ability to create posts or comments without having to share my email address.**
+        2. As a **user** I can **see whether I am logged in or not** so that **I will know if I will need to log in if I am not.**
 
-        3. As a **user** I can **easily log out** so that **I can have more security on my account.**
+        3. As a **user** I can **sign up easily with just a username and password** so that **I have the ability to create posts or comments without having to share my email address.**
 
-        4. As a **user** I can **see whether I am logged in or not** so that **I will know if I will need to log in if I am not.**
+        4. As a **user** I can **easily log out** so that **I can have more security on my account.**
 
         5. As a **user** I can **easily log in** so that **I can quickly post, add more comments, or delete content if I wish.**
+        
+        6. As a **user** I can **only like/unlike other users' posts and comments ** so that **I can only show my appreciation for other posts/comments and not cheat the system by liking my own posts/comments.**
+
+        7. As a **user** I can **only follow other users** so that **I cannot cheat the system and follow myself and gain myself a new, false follower.**
+
 
     - Posts
 
@@ -45,13 +50,29 @@
 
         5. As a **user** I can **like comments** so that **I can share my appreciation for the comment.**
 
+        6. As a **user** I can **unlike comments** so that **I can change my mind about my positive feelings towards a comment.**
+
     - Profile
 
-        1. As a **user** I can **view user avatars** so that **easily identify users of the website.**
+        1. As a **user** I can **follow or unfollow other users** so that **I can see or choose to remove posts by specific users in my posts feed.**
 
         2. As a **user** I can **view a detailed page of users** so that **I can see their posts and learn more about the user. I can also see their following count, followers count, etc.**
 
-        3. As a **user** I can **follow or unfollow other users** so that **I can see or choose to remove posts by specific users in my posts feed.**
+        3. As a **user** I can **view user avatars** so that **easily identify users of the website.**
+
+    - Errors
+
+        1. As a **user** I can **view a nice 500 page in the API** so that **I can be informed whether the server or database is having an issue on a nice, user-friendly interface.**
+
+        2. As a **user** I can **see a nice 404 page in the API** so that **I know if I have reached a webpage that does not exist on a more user-friendly interface.**
+    
+    - Searching
+
+        1. As a **user** I can **search for posts or users by typing in text in the search bar** so that **I can easily find posts or users with a few keyboard taps.**
+
+    - Filtering
+
+        1. As a **user** I can **easily filter information based on different circumstances** so that **I can easily find information via a simple filtering method such as who is following who, what posts a user liked, etc.**
 
 ### Database Model
 
