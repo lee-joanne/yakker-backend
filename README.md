@@ -9,7 +9,7 @@
 
     - Authentication
 
-        1. As a **user** I **cannot edit/delete posts/comments that are not mine** so that **I can be assured that my posts are protected and can only be edited by me.**
+        1. As a **user** I **cannot edit/delete posts/comments/likes that are not mine** so that **I can be assured that my posts/comments/likes are protected and can only be changed by me.**
 
         2. As a **user** I can **see whether I am logged in or not** so that **I will know if I will need to log in if I am not.**
 
