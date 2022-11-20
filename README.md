@@ -19,7 +19,7 @@
 
         5. As a **user** I can **easily log in** so that **I can quickly post, add more comments, or delete content if I wish.**
         
-        6. As a **user** I can **only like/unlike other users' posts and comments ** so that **I can only show my appreciation for other posts/comments and not cheat the system by liking my own posts/comments.**
+        6. As a **user** I can **only like/unlike other users' posts and comments** so that **I can only show my appreciation for other posts/comments and not cheat the system by liking my own posts/comments.**
 
         7. As a **user** I can **only follow other users** so that **I cannot cheat the system and follow myself and gain myself a new, false follower.**
 
