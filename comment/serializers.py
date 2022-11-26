@@ -8,7 +8,9 @@ class CommentSerializer(serializers.ModelSerializer):
     comment_reyakks_id = serializers.SerializerMethodField()
     comment_reyakks_count = serializers.ReadOnlyField()
     yakfile_id = serializers.ReadOnlyField(source="commenter.yakfile.id")
-    yakfile_image = serializers.ReadOnlyField(source="commenter.yakfile.image.url")
+    yakfile_image = serializers.ReadOnlyField(
+        source="commenter.yakfile.image.url"
+    )
 
     def get_comment_reyakks_id(self, obj):
         """
@@ -27,6 +29,6 @@ class CommentSerializer(serializers.ModelSerializer):
         model = Comment
         fields = [
             'id', 'commenter', 'created_at', 'updated_at', 'post',
-            'content', 'comment_reyakks_id', 'comment_reyakks_count', 
+            'content', 'comment_reyakks_id', 'comment_reyakks_count',
             'yakfile_id', 'yakfile_image',
         ]
