@@ -16,6 +16,7 @@ def root_route(request):
 
 
 @api_view(['POST'])
+@permission_classes((permissions.IsAuthenticated,))
 def logout_route(request):
     response = Response()
     response.set_cookie(
@@ -36,5 +37,5 @@ def logout_route(request):
         samesite=JWT_AUTH_SAMESITE,
         secure=JWT_AUTH_SECURE,
     )
-    return 
+    return
 
