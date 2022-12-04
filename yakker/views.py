@@ -16,7 +16,7 @@ def root_route(request):
 
 
 @api_view(['POST'])
-@permission_classes((permissions.IsAuthenticated,))
+@permission_classes((permissions.AllowAny,))
 def logout_route(request):
     response = Response()
     response.set_cookie(
