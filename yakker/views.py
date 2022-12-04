@@ -10,6 +10,7 @@ def root_route(request):
         "message": "Welcome to Yakker API!"
     })
 
+
 @api_view(['POST'])
 def logout_route(request):
     response = Response()
