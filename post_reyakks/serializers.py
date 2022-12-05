@@ -4,6 +4,9 @@ from .models import PostReyakks
 
 
 class PostReyakksSerializer(serializers.ModelSerializer):
+    """
+    Class for post reyakks serializer.
+    """
     post_reyakker = serializers.ReadOnlyField(source='post_reyakker.username')
 
     class Meta:

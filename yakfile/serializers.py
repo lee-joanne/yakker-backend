@@ -6,6 +6,9 @@ from follower.models import Follower
 
 
 class YakfileSerializer(serializers.ModelSerializer):
+    """
+    Class for yakfile serializer.
+    """
     author = serializers.ReadOnlyField(source='author.username')
     is_author = serializers.SerializerMethodField()
     author_age_days = serializers.SerializerMethodField()

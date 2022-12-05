@@ -4,6 +4,9 @@ from rest_framework import serializers
 
 
 class CurrentUserSerializer(UserDetailsSerializer):
+    """
+    Class serializer for user.
+    """
     yakfile_id = serializers.ReadOnlyField(source='yakfile.id')
     yakfile_image = serializers.ReadOnlyField(source='yakfile.image.url')
 

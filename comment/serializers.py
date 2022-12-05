@@ -4,6 +4,9 @@ from comment_reyakks.models import CommentReyakks
 
 
 class CommentSerializer(serializers.ModelSerializer):
+    """
+    Class for Comment serializer.
+    """
     commenter = serializers.ReadOnlyField(source='commenter.username')
     comment_reyakks_id = serializers.SerializerMethodField()
     comment_reyakks_count = serializers.ReadOnlyField()

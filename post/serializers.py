@@ -6,6 +6,9 @@ from post_reyakks.models import PostReyakks
 
 
 class PostSerializer(serializers.ModelSerializer):
+    """
+    Class serializer for post.
+    """
     author = serializers.ReadOnlyField(source='author.username')
     yakfile_id = serializers.ReadOnlyField(source="author.yakfile.id")
     is_author = serializers.SerializerMethodField()
