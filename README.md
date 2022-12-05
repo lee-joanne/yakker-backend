@@ -14,6 +14,27 @@ Yakker is a social-media website designed to mimic the features of Twitter. User
 - [Yakker Front-End Deployed Link](https://yakker-front-end.herokuapp.com/)
 - [Yakker Front-End GitHub](https://github.com/lee-joanne/yakker-frontend/)
 
+- [Yakker - Back End](#yakker---back-end)
+  * [Deployed Link](#deployed-link)
+  * [Front-End Links](#front-end-links)
+  * [User Experience (UX)](#user-experience--ux-)
+    + [User Stories](#user-stories)
+    + [Database Model](#database-model)
+    + [Kanban Board](#kanban-board)
+  * [Future Features](#future-features)
+  * [Technologies Used](#technologies-used)
+    + [Programs Used](#programs-used)
+  * [Testing](#testing)
+    + [Validation Testing](#validation-testing)
+    + [Manual Testing](#manual-testing)
+    + [Bugs](#bugs)
+  * [Deployment](#deployment)
+  * [Credits](#credits)
+    + [Code](#code)
+    + [Acknowledgements](#acknowledgements)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 ## User Experience (UX)
 
 ### User Stories
