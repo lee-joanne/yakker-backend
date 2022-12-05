@@ -2,8 +2,9 @@
 
 Yakker is a social-media website designed to mimic the features of Twitter. Users can create an account, log in, make a post, make comments on posts, like (reyakk) other users' posts and comments, and change their profile (yakfile) photo and profile biography. Yakker is designed to allow users to make posts about whatever they want, and be able to engage with other users by commenting on other posts/comments and reyakking to posts/comments. This repository contains the back end API portion of Yakker, created with Django REST Framework.
 
-'yakfile' = 'profile'
-'reyakk' = 'like'
+`'yakfile' = 'profile'`
+
+`'reyakk' = 'like'`
 
 ## Deployed Link
 
@@ -13,6 +14,8 @@ Yakker is a social-media website designed to mimic the features of Twitter. User
 
 - [Yakker Front-End Deployed Link](https://yakker-front-end.herokuapp.com/)
 - [Yakker Front-End GitHub](https://github.com/lee-joanne/yakker-frontend/)
+
+## Table of Contents
 
 - [Yakker - Back End](#yakker---back-end)
   * [Deployed Link](#deployed-link)
@@ -39,126 +42,124 @@ Yakker is a social-media website designed to mimic the features of Twitter. User
 
 ### User Stories
 
-- Users: 
+- Authentication
 
-    - Authentication
+    1. As a **user** I **cannot edit/delete posts/comments/likes that are not mine** so that **I can be assured that my posts/comments/likes are protected and can only be changed by me.**
 
-        1. As a **user** I **cannot edit/delete posts/comments/likes that are not mine** so that **I can be assured that my posts/comments/likes are protected and can only be changed by me.**
+        - This user story is achieved by creating custom permissions that will stop users from deleting, editing, unliking/liking posts/comments that are not done by themselves.
 
-            - This user story is achieved by creating custom permissions that will stop users from deleting, editing, unliking/liking posts/comments that are not done by themselves.
+    2. As a **user** I can **see whether I am logged in or not** so that **I will know if I will need to log in if I am not.**
 
-        2. As a **user** I can **see whether I am logged in or not** so that **I will know if I will need to log in if I am not.**
+        - This user story is achieved by showing the username created in Yakfile (profile) after the user signs up and logs in using Django's all-auth.
 
-            - This user story is achieved by showing the username created in Yakfile (profile) after the user signs up and logs in using Django's all-auth.
+    3. As a **user** I can **sign up easily with just a username and password** so that **I have the ability to create posts or comments without having to share my email address.**
 
-        3. As a **user** I can **sign up easily with just a username and password** so that **I have the ability to create posts or comments without having to share my email address.**
+        - This user story is achieved by using Django's all-auth.
 
-            - This user story is achieved by using Django's all-auth.
+    4. As a **user** I can **easily log out** so that **I can have more security on my account.**
 
-        4. As a **user** I can **easily log out** so that **I can have more security on my account.**
+        - This user story is achieved by using Django's all-auth.
 
-            - This user story is achieved by using Django's all-auth.
+    5. As a **user** I can **easily log in** so that **I can quickly post, add more comments, or delete content if I wish.**
 
-        5. As a **user** I can **easily log in** so that **I can quickly post, add more comments, or delete content if I wish.**
-
-            - This user story is achieved by using Django's all-auth.
-        
-        6. As a **user** I can **only like/unlike other users' posts and comments** so that **I can only show my appreciation for other posts/comments and not cheat the system by liking my own posts/comments.**
-
-            - This user story is achieved by creating the Comment Reyakks and Post Reyakks models to like other user's content. Custom permissions are created to allow users to only like other users' posts/comments.
-
-        7. As a **user** I can **only follow other users** so that **I cannot cheat the system and follow myself and gain myself a new, false follower.**
-
-            - This user story is achieved by creating the Follower model to follow other users. A custom permission is created to stop users from following themselves.
-
-
-    - Posts
-
-        1. As a **user** I can **create new posts** so that **I can share images, my thoughts, or what I'm doing.**
-
-            - This user story is achieved by creating the Post model. Users can add images, content, and a title to posts.
-
-        2. As a **user** I can **edit posts** so that **I can change my posts, images, etc whenever I change my mind about what I posted or wish to remove/add details.**
-
-            - This user story is achieved by using generics.RetrieveUpdateDestroyAPIView in Post views. Users are able to edit their posts. 
-
-        3. As a **user** I can **delete my posts** so that **I can get rid of my posts that I no longer want to be shared.**
-
-            - This user story is achieved by using generics.RetrieveUpdateDestroyAPIView in Post views. Users are able to delete their posts. 
-
-        4. As a **user** I can **view the details of a post** so that **I can read more information about the post such as when it was created, who created it, if it was edited, read the comments, etc.**
-
-            - This user story is achieved by using generics.RetrieveUpdateDestroyAPIView in Post views. Users are able to see the detailed information about a post such as who created it, when it was created/edited, if there are comments, etc. 
-
-        5. As a **user** I can **like posts** so that **I can share my appreciation for the post and show the world and the author that their post is great.**
-
-            - This user story is achieved using the Post Reyakks model. Users are able to reyakk to user posts.
-
-        6. As a **user** I can **remove likes on a post** so that **I can change my mind about whether I like the post or not.**
-
-            - This user story is achieved using generics.RetrieveDestroyAPIView in Post Reyakks views. Users are able to remove their reyakks on a post.
-
-    - Comments
-
-        1. As a **user** I can **post a comment on a post** so that **I can contribute discussion to a post or share my thoughts about a post.**
-
-            - This user story is achieved using the Comment model. Users are able to add comments on posts.
-
-        2. As a **user** I can **delete my comments on a post** so that **I can remove comments if I no longer want my comments to be public.**
-
-            - This user story is achieved using generics.RetrieveUpdateDestroyAPIView in Comment views. Users are able to delete their comments. 
-
-        3. As a **user** I can **read comments on a post** so that **I can read what others think about the post and read the discussion happening.**
-
-            - This user story is achieved using generics.ListCreateAPIView in Comment views. Users are able to read the list of comments on a post. 
-
-        4. As a **user** I can **edit my comments** so that **have the possibility to remove or add more details to my existing comments.**
-
-            - This user story is achieved using generics.RetrieveUpdateDestroyAPIView in Comment views. Users are able to edit their comments. 
-
-        5. As a **user** I can **like comments** so that **I can share my appreciation for the comment.**
-
-            - This user story is achieved by creating the Comment Reyakks model. Users are able to reyakk to other users' comments.
-
-        6. As a **user** I can **unlike comments** so that **I can change my mind about my positive feelings towards a comment.**
-
-            - This user story is achieved using generics.RetrieveDestroyAPIView in Comment Reyakks views. Users are able to remove their reyakks on a post.
-
-    - Profile
-
-        1. As a **user** I can **follow or unfollow other users** so that **I can see or choose to remove posts by specific users in my posts feed.**
-        
-            - This user story is achieved using the Follower model. Users are able to follow and unfollow other users. 
-
-        2. As a **user** I can **view a detailed page of users** so that **I can see their posts and learn more about the user. I can also see their following count, followers count, etc.**
-
-            - This user story is achieved using the Yakfile views. Users are able to see posts tied to a user, including their following count and followers count.
-
-        3. As a **user** I can **view user avatars** so that **easily identify users of the website.**
-
-            - This user story is achieved by the Yakfile model, allowing users to view profile images/avatars of other users. 
-
-    - Errors
-
-        1. As a **user** I can **view a nice 500 page in the API** so that **I can be informed whether the server or database is having an issue on a nice, user-friendly interface.**
-
-            - This user story is achieved by creating custom views to throw a 500 page in a readable format when the server or database is having an issue.
-
-        2. As a **user** I can **see a nice 404 page in the API** so that **I know if I have reached a webpage that does not exist on a more user-friendly interface.**
-
-            - This user story is achieved by creating custom views to throw a 404 page in a readable format when a link or page does not exist. 
+        - This user story is achieved by using Django's all-auth.
     
-    - Searching
+    6. As a **user** I can **only like/unlike other users' posts and comments** so that **I can only show my appreciation for other posts/comments and not cheat the system by liking my own posts/comments.**
 
-        1. As a **user** I can **search for posts or users by typing in text in the search bar** so that **I can easily find posts or users with a few keyboard taps.**
+        - This user story is achieved by creating the Comment Reyakks and Post Reyakks models to like other user's content. Custom permissions are created to allow users to only like other users' posts/comments.
 
-            - This user story is achieved in Post views where custom filterset fields, search fields, and ordering fields are implemented to allow users to search for posts based on content, title, and author.
+    7. As a **user** I can **only follow other users** so that **I cannot cheat the system and follow myself and gain myself a new, false follower.**
 
-    - Filtering
+        - This user story is achieved by creating the Follower model to follow other users. A custom permission is created to stop users from following themselves.
 
-        1. As a **user** I can **easily filter information based on different circumstances** so that **I can easily find information via a simple filtering method such as who is following who, what posts a user liked, etc.**
 
-            - This user story is achieved by creating custom filterset fields in Post views, Comment views, Yakfile views, etc. However, users will not be able to see who is following who, they can see how many followers a user has or how many they are following.
+- Posts
+
+    1. As a **user** I can **create new posts** so that **I can share images, my thoughts, or what I'm doing.**
+
+        - This user story is achieved by creating the Post model. Users can add images, content, and a title to posts.
+
+    2. As a **user** I can **edit posts** so that **I can change my posts, images, etc whenever I change my mind about what I posted or wish to remove/add details.**
+
+        - This user story is achieved by using generics.RetrieveUpdateDestroyAPIView in Post views. Users are able to edit their posts. 
+
+    3. As a **user** I can **delete my posts** so that **I can get rid of my posts that I no longer want to be shared.**
+
+        - This user story is achieved by using generics.RetrieveUpdateDestroyAPIView in Post views. Users are able to delete their posts. 
+
+    4. As a **user** I can **view the details of a post** so that **I can read more information about the post such as when it was created, who created it, if it was edited, read the comments, etc.**
+
+        - This user story is achieved by using generics.RetrieveUpdateDestroyAPIView in Post views. Users are able to see the detailed information about a post such as who created it, when it was created/edited, if there are comments, etc. 
+
+    5. As a **user** I can **like posts** so that **I can share my appreciation for the post and show the world and the author that their post is great.**
+
+        - This user story is achieved using the Post Reyakks model. Users are able to reyakk to user posts.
+
+    6. As a **user** I can **remove likes on a post** so that **I can change my mind about whether I like the post or not.**
+
+        - This user story is achieved using generics.RetrieveDestroyAPIView in Post Reyakks views. Users are able to remove their reyakks on a post.
+
+- Comments
+
+    1. As a **user** I can **post a comment on a post** so that **I can contribute discussion to a post or share my thoughts about a post.**
+
+        - This user story is achieved using the Comment model. Users are able to add comments on posts.
+
+    2. As a **user** I can **delete my comments on a post** so that **I can remove comments if I no longer want my comments to be public.**
+
+        - This user story is achieved using generics.RetrieveUpdateDestroyAPIView in Comment views. Users are able to delete their comments. 
+
+    3. As a **user** I can **read comments on a post** so that **I can read what others think about the post and read the discussion happening.**
+
+        - This user story is achieved using generics.ListCreateAPIView in Comment views. Users are able to read the list of comments on a post. 
+
+    4. As a **user** I can **edit my comments** so that **have the possibility to remove or add more details to my existing comments.**
+
+        - This user story is achieved using generics.RetrieveUpdateDestroyAPIView in Comment views. Users are able to edit their comments. 
+
+    5. As a **user** I can **like comments** so that **I can share my appreciation for the comment.**
+
+        - This user story is achieved by creating the Comment Reyakks model. Users are able to reyakk to other users' comments.
+
+    6. As a **user** I can **unlike comments** so that **I can change my mind about my positive feelings towards a comment.**
+
+        - This user story is achieved using generics.RetrieveDestroyAPIView in Comment Reyakks views. Users are able to remove their reyakks on a post.
+
+- Profile
+
+    1. As a **user** I can **follow or unfollow other users** so that **I can see or choose to remove posts by specific users in my posts feed.**
+    
+        - This user story is achieved using the Follower model. Users are able to follow and unfollow other users. 
+
+    2. As a **user** I can **view a detailed page of users** so that **I can see their posts and learn more about the user. I can also see their following count, followers count, etc.**
+
+        - This user story is achieved using the Yakfile views. Users are able to see posts tied to a user, including their following count and followers count.
+
+    3. As a **user** I can **view user avatars** so that **easily identify users of the website.**
+
+        - This user story is achieved by the Yakfile model, allowing users to view profile images/avatars of other users. 
+
+- Errors
+
+    1. As a **user** I can **view a nice 500 page in the API** so that **I can be informed whether the server or database is having an issue on a nice, user-friendly interface.**
+
+        - This user story is achieved by creating custom views to throw a 500 page in a readable format when the server or database is having an issue.
+
+    2. As a **user** I can **see a nice 404 page in the API** so that **I know if I have reached a webpage that does not exist on a more user-friendly interface.**
+
+        - This user story is achieved by creating custom views to throw a 404 page in a readable format when a link or page does not exist. 
+
+- Searching
+
+    1. As a **user** I can **search for posts or users by typing in text in the search bar** so that **I can easily find posts or users with a few keyboard taps.**
+
+        - This user story is achieved in Post views where custom filterset fields, search fields, and ordering fields are implemented to allow users to search for posts based on content, title, and author.
+
+- Filtering
+
+    1. As a **user** I can **easily filter information based on different circumstances** so that **I can easily find information via a simple filtering method such as who is following who, what posts a user liked, etc.**
+
+        - This user story is achieved by creating custom filterset fields in Post views, Comment views, Yakfile views, etc. However, users will not be able to see who is following who, they can see how many followers a user has or how many they are following.
 
 ### Database Model
 
