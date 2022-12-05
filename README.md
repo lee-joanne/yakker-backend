@@ -291,6 +291,7 @@ Testing was done manually by trying each list over and over to ensure success. I
     - The post count, following count, and follower count are visible in the user API. When creating new posts, following new users or being followed, the numbers will go up, and will decrease when there are any deletions or unfollows.
     - A List of users are shown in the list view, and a detailed list of users will show with the approrpriate id.
     - Users are able to be deleted in the back end.
+    - All urls are working perfectly. Can view all yakfiles when visiting `/yakfile/`. Can access specific profiles in detail view when adding specific yakfile id to url.
 
 2. Post:
     - Users are able to successfully create posts and have the posts attached to the user id.
@@ -304,6 +305,7 @@ Testing was done manually by trying each list over and over to ensure success. I
     - Posts are successfully able to be filtered by user feed, user-liked posts, and user posts.
     - Posts are successfully able to be ordered based on number of likes, the number of comments, and when the post like was created at. 
     - Posts are able to be liked and unliked, and have the number of likes edited accurately. 
+    - All urls are working perfectly. Can view all posts when visiting `/post/`. Can access specific posts in detail view when adding specific post id to url.
 
 3. Comment:
     - Users are able to successfully create comments and have the comments attached to the user id and post id.
@@ -315,6 +317,8 @@ Testing was done manually by trying each list over and over to ensure success. I
     - Comments associated with a given post are successfully able to be retrieved. 
     - Comments are successfully able to be ordered based on number of likes and when the comment like was created at. 
     - Comments are able to be liked and unliked, and have the number of likes changed accurately. 
+    - All urls are working perfectly. Can view all comments when visiting `/comment/`. Can access specific comments in detail view when adding specific comment id to url.
+    
 
 4. Follower:
     - Users are successfully able to follow other users. API successfully reads which user is the follower, and which user is being followed.
@@ -324,18 +328,21 @@ Testing was done manually by trying each list over and over to ensure success. I
     - In detail follow view, can see detailed information on the follow.
     - Users are able to successfully unfollow the users that they are following.
     - Users are able to follow themselves in the back end. But in the front-end, conditional rendering will be applied to prevent users from following themselves. 
+    - All urls are working perfectly. Can view all followers when visiting `/follower/`. Can access specific followers in detail view when adding specific follower id to url.
 
 5. Post Reyakks (Post likes):
     - Users are successfully able to like other posts. API successfully registers the post_reyakks_id to the post.
     - Users are successfully able to unlike the posts that they have liked. 
     - Users are not able to like their own posts or else a permission denied error will be thrown.
     - If users try to like a post they have already liked, the API will throw a duplicate validation error.
+    - All urls are working perfectly. Can view all post likes when visiting `/post_reyakks/`. Can access specific post likes in detail view when adding specific post reyakks id to url.
 
 6. Comment Reyakks (Comment likes):
     - Users are successfully able to like other comments. API successfully registers the comment_reyakks_id to the comment. 
     - Users are successfully able to unlike the comments that they have liked. 
     - Users are not able to like their own comments or else a permission denied error will be thrown.
     - If users try to like a comment they have already liked, the API will throw a duplicate validation error.
+    - All urls are working perfectly. Can view all comment likes when visiting `/comment_reyakks/`. Can access specific comment likes in detail view when adding specific comment reyakks id to url.
 
 7. Error Handling:
     - When a 404 error is thrown (the user accesses a page that does not exist), the custom error handle message will show.
@@ -344,7 +351,7 @@ Testing was done manually by trying each list over and over to ensure success. I
 8. Authentication:
     - Users are able to create a new account on the back end and the new user details will be saved. 
     - In the back end, users are able to successfully login and view their username in the navigation bar.
-    - Users are able to log out of the back end.
+    - Users are able to log out of the back end successfully. 
 
 ### Bugs
 
