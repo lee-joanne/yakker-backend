@@ -1,10 +1,13 @@
-# Yakker - Back-End
+# Yakker - Back End
 
-Yakker is a social-media website designed to mimic the features of Twitter. Users can create an account, login, make a post, make comments on posts, like (reyakk) to other user's posts and comments, change their profile (yakfile) photo and profile biography. Yakker is designed to allow users to make posts about whatever they want, and be able to engage with other users by commenting on other posts and reyakking to posts. This repository contains the back-end API portion of Yakker, created with Django REST Framework.
+Yakker is a social-media website designed to mimic the features of Twitter. Users can create an account, log in, make a post, make comments on posts, like (reyakk) other users' posts and comments, and change their profile (yakfile) photo and profile biography. Yakker is designed to allow users to make posts about whatever they want, and be able to engage with other users by commenting on other posts/comments and reyakking to posts/comments. This repository contains the back end API portion of Yakker, created with Django REST Framework.
+
+'yakfile' = 'profile'
+'reyakk' = 'like'
 
 ## Deployed Link
 
-- [Yakker Back-End Deployed Link](https://yakker-backend.herokuapp.com/)
+- [Yakker Back End Deployed Link](https://yakker-backend.herokuapp.com/)
 
 ## Front-End Links
 
@@ -21,11 +24,11 @@ Yakker is a social-media website designed to mimic the features of Twitter. User
 
         1. As a **user** I **cannot edit/delete posts/comments/likes that are not mine** so that **I can be assured that my posts/comments/likes are protected and can only be changed by me.**
 
-            - This is user story is achieved by creating custom permissions that will stop users from deleting, editing, unliking/liking posts/comments that are not done by themselves.
+            - This user story is achieved by creating custom permissions that will stop users from deleting, editing, unliking/liking posts/comments that are not done by themselves.
 
         2. As a **user** I can **see whether I am logged in or not** so that **I will know if I will need to log in if I am not.**
 
-            - This user story is achieved by showing the username created in Yakfile after user signs up and logins using Django's all-auth.
+            - This user story is achieved by showing the username created in Yakfile (profile) after the user signs up and logs in using Django's all-auth.
 
         3. As a **user** I can **sign up easily with just a username and password** so that **I have the ability to create posts or comments without having to share my email address.**
 
@@ -41,11 +44,11 @@ Yakker is a social-media website designed to mimic the features of Twitter. User
         
         6. As a **user** I can **only like/unlike other users' posts and comments** so that **I can only show my appreciation for other posts/comments and not cheat the system by liking my own posts/comments.**
 
-            - This user story is achieved by creating the Comment Reyakks and Post Reyakks models. Custom permissions is created to allow users to only like other user's posts/comments.
+            - This user story is achieved by creating the Comment Reyakks and Post Reyakks models to like other user's content. Custom permissions are created to allow users to only like other users' posts/comments.
 
         7. As a **user** I can **only follow other users** so that **I cannot cheat the system and follow myself and gain myself a new, false follower.**
 
-            - This user story is achieved by creating the Follower model. Custom permission is created to stop users from following themselves.
+            - This user story is achieved by creating the Follower model to follow other users. A custom permission is created to stop users from following themselves.
 
 
     - Posts
@@ -64,7 +67,7 @@ Yakker is a social-media website designed to mimic the features of Twitter. User
 
         4. As a **user** I can **view the details of a post** so that **I can read more information about the post such as when it was created, who created it, if it was edited, read the comments, etc.**
 
-            - This user story is achieved by using generics.RetrieveUpdateDestroyAPIView in Post views. Users are able to see detailed information about a post such as who created it, when it was created/edited, if there are comments, etc. 
+            - This user story is achieved by using generics.RetrieveUpdateDestroyAPIView in Post views. Users are able to see the detailed information about a post such as who created it, when it was created/edited, if there are comments, etc. 
 
         5. As a **user** I can **like posts** so that **I can share my appreciation for the post and show the world and the author that their post is great.**
 
@@ -78,7 +81,7 @@ Yakker is a social-media website designed to mimic the features of Twitter. User
 
         1. As a **user** I can **post a comment on a post** so that **I can contribute discussion to a post or share my thoughts about a post.**
 
-            - This user story is achieved using the Comment model. Users are able to create comments on posts.
+            - This user story is achieved using the Comment model. Users are able to add comments on posts.
 
         2. As a **user** I can **delete my comments on a post** so that **I can remove comments if I no longer want my comments to be public.**
 
@@ -94,7 +97,7 @@ Yakker is a social-media website designed to mimic the features of Twitter. User
 
         5. As a **user** I can **like comments** so that **I can share my appreciation for the comment.**
 
-            - This user story is achieved by creating the Comment Reyakks model. Users are able to reyakk to other user's comments.
+            - This user story is achieved by creating the Comment Reyakks model. Users are able to reyakk to other users' comments.
 
         6. As a **user** I can **unlike comments** so that **I can change my mind about my positive feelings towards a comment.**
 
@@ -112,7 +115,7 @@ Yakker is a social-media website designed to mimic the features of Twitter. User
 
         3. As a **user** I can **view user avatars** so that **easily identify users of the website.**
 
-            - This user story is achieved by the Yakfile model, allowing users to add in images to their profiles. 
+            - This user story is achieved by the Yakfile model, allowing users to view profile images/avatars of other users. 
 
     - Errors
 
@@ -188,7 +191,7 @@ I used a kanban board to help organize the user stories and tasks required for t
 
 ## Future Features
 
-In the future, I wish to add a feature where users can 'retweet' other user's posts by sharing their posts to add to their own post feed. I also wish for users to be able to @ each other in the comments string so they can target specific users in their comments. I also hope to be able to add a messaging feature where users are able to privately message other users. These features will enhance user experience to allow users to stay more connected with other users. In the backend, I have added a serializer where it will show the user's age in dates, I will add this into the front-end when I enhance the front-end functionality and design. 
+In the future, I wish to add a feature where users can 'retweet' other users' posts by sharing their posts to add to their own post feed. I also wish for users to be able to @ each other in the comments string so they can target specific users in their comments. I also hope to be able to add a messaging feature where users are able to privately message other users. These features will enhance user experience to allow users to stay more connected with other users. In the backend, I have added a serializer where it will show the user's age in dates, I will add this into the front-end when I enhance the front-end functionality and design. 
 
 ## Technologies Used
 
@@ -220,13 +223,13 @@ In the future, I wish to add a feature where users can 'retweet' other user's po
     - Git was used by utilizing the Gitpod terminal to commit to Git and Push to GitHub. Version control. 
 
 2. [GitHub](https://github.com/)
-    - GitHub was used to store the project code after being pushed in by Git. Project repository linked with Heroku for deployment process. GitHub was also used to create the kanban board. 
+    - GitHub was used to store the project code after being pushed in by Git. Project repository linked with Heroku for the deployment process. GitHub was also used to create the kanban board. 
 
 3. [Heroku](https://dashboard.heroku.com/login)
-    - Heroku was used to deploy this project. Heroku's Postgres was used as the database.  
+    - Heroku was used to deploy this project.
 
 4. [Whimsical](https://whimsical.com)
-    - Whimsical was used to create the data model for the back-end.
+    - Whimsical was used to create the data model for the back end.
 
 5. [CI Python Linter](https://pep8ci.herokuapp.com/)
     - CI Python Linter was used to validate the Python code used and check for warnings/errors. 
@@ -235,7 +238,7 @@ In the future, I wish to add a feature where users can 'retweet' other user's po
     - Ecotrust-Canada Markdown was used to create the table of contents for this README. 
 
 7. [Cloudinary](https://cloudinary.com/)
-    - Cloudinary used to host the uploaded images.
+    - Cloudinary is used to host the uploaded images.
 
 8. [Autopep8](https://pypi.org/project/autopep8/)
     - Autopep8 was used to help organize Python code to match PEP8 standards.
@@ -257,48 +260,49 @@ In the future, I wish to add a feature where users can 'retweet' other user's po
 
 ### Manual Testing
 
-- A thorough list of tests have been done on the back-end project. These are lists of successful results after vigorous manual testing.
-Testing was done manually by trying each list over and over to ensure success. 
+- Thorough lists of tests have been done on the back end project. These are lists of successful results after vigorous manual testing.
+Testing was done manually by trying each list over and over to ensure success. I have tested each list over and over again to ensure that everything is working perfectly.
 
 1. Yakfile (Profile):
 
     - Users are able to successfully create an account and their profile, default image, and content are saved in the database.
-    - Users are able to edit their profile image and content.
+    - Users are able to view their username, image, content, when their account was created, etc.
     - The post count, following count, and follower count are visible in the user API. When creating new posts, following new users or being followed, the numbers will go up, and will decrease when there are any deletions or unfollows.
-    - List of user's are shown in the list view, and detailed list of users will show with the approrpriate id.
-    - Users are able to be deleted in the back-end.
+    - A List of users are shown in the list view, and a detailed list of users will show with the approrpriate id.
+    - Users are able to be deleted in the back end.
 
 2. Post:
     - Users are able to successfully create posts and have the posts attached to the user id.
-    - The number of posts will increase or decrease if the user chooses to delete or remove post.
-    - API shows whether the logged in user is the author of the post or not.
+    - The number of posts tied to a user will increase or decrease if the user posts more or deletes posts. 
+    - API shows whether the logged-in user is the author of the post or not.
     - The posts successfully show the author, when it was created, when it was updated, the post image, the content, and title.
     - Posts are successfully able to be edited and deleted ONLY by the author of the post.
-    - Image validation created in the serializer.py works as images posted by the user must be less than 1 MG, smaller than 2500 px width and height. 
-    - List of posts appear in the list view page, and detailed view of posts will appear in the detail view page with appropriate post id.
+    - Image validation created in the serializer.py works as images posted by the user must be less than 1 MG, smaller than 2500 px in width and in height. 
+    - The list of posts appear in the list view page, and a detailed view of posts will appear in the detail view page with the appropriate post id.
     - Posts are successfully able to be searched by typing author, title, and content.
-    - Posts are successfully able to be filtered by user feed, user liked posts, and user posts.
-    - Posts are successfully able to be ordered based on number of likes, number of comments, and when the post like was created at. 
-    - Posts are able to be liked and unliked, and have the number of likes edited accurrately. 
+    - Posts are successfully able to be filtered by user feed, user-liked posts, and user posts.
+    - Posts are successfully able to be ordered based on number of likes, the number of comments, and when the post like was created at. 
+    - Posts are able to be liked and unliked, and have the number of likes edited accurately. 
 
 3. Comment:
     - Users are able to successfully create comments and have the comments attached to the user id and post id.
-    - The number of comments will increase or decrease if the user chooses to delete or remove comment.
-    - API shows whether the logged in user is the commenter of the comment or not.
+    - The number of comments will increase or decrease if the user chooses to delete or remove the comment.
+    - API shows whether the logged-in user is the commenter of the comment or not.
     - The comments successfully show the commenter, when it was created, when it was updated, and the content.
     - Comments are successfully able to be edited and deleted ONLY by the commenter of the post.
-    - List of comments appear in the list view page, and detailed view of comments will appear in the detail view page with appropriate comment id.
+    - The list of comments appear in the list view page, and a detailed view of comments will appear in the detail view page with the appropriate comment id.
     - Comments associated with a given post are successfully able to be retrieved. 
     - Comments are successfully able to be ordered based on number of likes and when the comment like was created at. 
-    - Comments are able to be liked and unliked, and have the number of likes edited accurrately. 
+    - Comments are able to be liked and unliked, and have the number of likes changed accurately. 
 
 4. Follower:
     - Users are successfully able to follow other users. API successfully reads which user is the follower, and which user is being followed.
-    -  When the follow was created is succesfully logged, with the number of days listed.
+    - The creation date of the follow is successfully logged with the number of days shown. 
     - If a user tries to follow a user again, the API will throw a duplicate validation error.
     - The list view successfully shows a list of all follows.
     - In detail follow view, can see detailed information on the follow.
     - Users are able to successfully unfollow the users that they are following.
+    - Users are able to follow themselves in the back end. But in the front-end, conditional rendering will be applied to prevent users from following themselves. 
 
 5. Post Reyakks (Post likes):
     - Users are successfully able to like other posts. API successfully registers the post_reyakks_id to the post.
@@ -313,16 +317,21 @@ Testing was done manually by trying each list over and over to ensure success.
     - If users try to like a comment they have already liked, the API will throw a duplicate validation error.
 
 7. Error Handling:
-    - When a 404 error is thrown (user accesses a page that does not exist), the custom error handle message will show.
-    - When a 500 error is thrown (the back-end or server is having an issue), the custom error handle message will show.
+    - When a 404 error is thrown (the user accesses a page that does not exist), the custom error handle message will show.
+    - When a 500 error is thrown (the back end or server is having an issue), the custom error handle message will show.
+
+8. Authentication:
+    - Users are able to create a new account on the back end and the new user details will be saved. 
+    - In the back end, users are able to successfully login and view their username in the navigation bar.
+    - Users are able to log out of the back end.
 
 ### Bugs
 
-There have been many bugs during the development of this project, a list of the major bugs experienced in the back-end are as follows:
+There have been many bugs during the development of this project, a list of the major bugs experienced in the back end is as follows:
 
-- The first bug was having issues with logging out on the front-end. I noticed that in the front-end project, users were not being logged out as after clicking 'log out' and refreshing the page, the user would still be logged in. To debug this, Code Institute include a tutorial on how to overcome this bug by creating a custom api_view function for logout_route in the app's views.py file. This logout_route would then be added to the app's urls.py and MUST be placed above the `'dj-rest-auth/` url.
+- The first bug was having issues with logging out on the front-end. I noticed that in the front-end project, users were not staying logged out as after clicking 'log out' and refreshing the page, the user would still be logged in. To debug this, Code Institute include a tutorial on how to overcome this bug by creating a custom api_view function for logout_route in the app's views.py file. This logout_route would then be added to the app's urls.py and MUST be placed above the `'dj-rest-auth/` url.
 
-- Another bug I was facing was trying to create custom handling for 404 and 500 errors. I was struggling to figure out how exactly I would go about this to create a personalized message for when these errors occured. I tried putting them in the main app's views.py file but the messages would not show. I was able to find a YouTube channel that touches perfectly on creating custom error handling messages for Django REST Framework.
+- Another bug I was facing was trying to create custom handling for 404 and 500 errors. I was struggling to figure out how exactly I would go about this to create a personalized message for when these errors occurred. I tried putting them in the main app's views.py file but the messages would not show. I was able to find a YouTube channel that touches perfectly on creating custom error handling messages for Django REST Framework.
 
 - I was struggling to figure out how to prevent users from liking their own posts and comments. I tried to create a custom permission but after reading Django REST Framework documentation, I was able to raise PermissionDenied in Comment Reyakks and Post Reyakks views.py to check if the `post.author` or `comment.commenter` match the `self.request.user`. If so, then they will be denied permission. 
 
@@ -330,10 +339,10 @@ There have been many bugs during the development of this project, a list of the 
 
 ## Deployment
 
-- The following steps were taken for the deployment process for the back-end component of Yakker. These steps take place after Django is correctly installed and an 'env.py' file is made (and file is added to .gitignore). [Cloudinary](https://cloudinary.com/) must also be successfully hooked up to Django by adding in all necessary imports and settings in 'settings.py' and 'env.py'.
+- The following steps were taken for the deployment process for the back end component of Yakker. These steps take place after Django is correctly installed and an 'env.py' file is made (and file is added to .gitignore). [Cloudinary](https://cloudinary.com/) must also be successfully hooked up to Django by adding in all necessary imports and settings in 'settings.py' and 'env.py'.
 Instructions are copied from CI's DRF Example Project. 
  
-1. Log in or create an account to [ElephantSQL](https://www.elephantsql.com/) and click "Create New Instance".
+1. Login or create an account to [ElephantSQL](https://www.elephantsql.com/) and click "Create New Instance".
 2. Set up a plan, give your plan a name (name of project), select the Tiny Turtle (free plan), leave the Tag fields blank, and select your region. 
 3. Click review, and after ensuring details are correct, click 'Create instance'. 
 4. Return to ElephantSQL dashboard and click database instance name for this project.
@@ -372,14 +381,14 @@ Instructions are copied from CI's DRF Example Project.
 32. Back on Heroku dashboard, open your app and open settings tab.
 33. Add two more Config vars, SECRET_KEY (same value as the one in env.py file) and CLOUDINARY_URL (copy in Cloudinary URL from env.py file without quotation marks).
 34. Open the Deploy tab.
-35. In Deployment method section, select 'Connect to GitHub', saerch for your repo, and click Connect. 
+35. In Deployment method section, select 'Connect to GitHub', search for your repo, and click Connect. 
 
 - The following steps were taken for the cloning process: 
 
 1. Log in to **[GitHub](https://github.com/)**.
 2. Click on the profile icon to locate **'Your repositories'**. 
 3. On the repository page, click on the repository you wish to clone.
-4. Under **'Code'**, see the different cloning options, HTTPS, SSH, and GitHub CLI. Click the prefered cloning option, and then copy the link provided. 
+4. Under **'Code'**, see the different cloning options, HTTPS, SSH, and GitHub CLI. Click the preferred cloning option, and then copy the link provided. 
 5. Open **Terminal**.
 6. In Terminal, change the current working directory to the desired location of the cloned directory.
 7. Type git clone, and then paste the URL copied from GitHub earlier. 
@@ -390,13 +399,13 @@ Instructions are copied from CI's DRF Example Project.
 ### Code
 
 - [Code Institute DRF API Example Project](https://github.com/Code-Institute-Solutions/drf-api)
-    - Majority of code is inspired by Code Institute's DRF API example project, including the database model, the different features and functionality of the API, creating serializers, setting up the project, setting up filters and search fields, etc. 
+    - Most of code is inspired by Code Institute's DRF API example project, including the database model, the different features and functionality of the API, creating serializers, setting up the project, setting up filters and search fields, etc. 
 
 - [Stack Overflow](https://stackoverflow.com/)
     - Stack Overflow was referred to many times for debugging, requiring help with specific issues regarding models and setting up serializers.
 
 - [GeeksforGeeks](https://www.geeksforgeeks.org/)
-    - This website was referred to many times when when creating the views.py files for the project.
+    - This website was referred to many times when creating the views.py files for the project.
 
 - [Django Documentation](https://www.djangoproject.com/)
     - The official Django documentation was referred to many times while creating this project. 
@@ -405,7 +414,7 @@ Instructions are copied from CI's DRF Example Project.
     - The official Django REST Framework documentation was referred to many times while creating this project. 
 
 - [YouTube Channel Cryce Truly on Django Exception Handling](https://www.youtube.com/watch?v=WUMEAZWM5xE&ab_channel=CryceTruly)
-    - This video was referred to when creating the utils folder and the views.py to create custom error message and handling for 404 and 500 errors.
+    - This video was referred to when creating the utils folder and the views.py to create custom error messages and handling for 404 and 500 errors.
 
 ### Acknowledgements
 
