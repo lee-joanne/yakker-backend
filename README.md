@@ -213,7 +213,7 @@ I used a kanban board to help organize the user stories and tasks required for t
 
 ## Future Features
 
-In the future, I wish to add a feature where users can 'retweet' other users' posts by sharing their posts to add to their own post feed. I also wish for users to be able to @ each other in the comments string so they can target specific users in their comments. I also hope to be able to add a messaging feature where users are able to privately message other users. These features will enhance user experience to allow users to stay more connected with other users. In the backend, I have added a serializer where it will show the user's age in dates, I will add this into the front-end when I enhance the front-end functionality and design. 
+In the future, I wish to add a feature where users can 'retweet' other users' posts by sharing their posts to add to their own post feed. I also wish for users to be able to @ each other in the comments string so they can target specific users in their comments. I also hope to be able to add a messaging feature where users are able to privately message other users. These features will enhance user experience to allow users to stay more connected with other users. In the backend, I have added a serializer where it will show the user's age in days, I will add this into the front-end when I enhance the front-end functionality and design. 
 
 ## Technologies Used
 
